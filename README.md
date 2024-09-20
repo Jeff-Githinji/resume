@@ -1,44 +1,36 @@
-# vCard - Personal portfolio
+Jeff Githinji - My Portfolio Website
+Welcome to the repository for my personal portfolio website. This site showcases my skills, projects, and professional experience as a Web Developer
+🌐 Live Demo
+https://jeff-githinji.github.io/resume/
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+🛠️ Technologies Used
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+HTML
+CSS 
+JavaScript
 
-## Demo
+🚀 Features
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+Responsive design for desktop and mobile devices
+Interactive UI elements
+Beautiful minimalistic design
 
-## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+🔧 Setup and Installation
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+Clone this repository
+git clone https://github.com/Jeff-Githinji/resume.git
 
-## Installing vCard
+Navigate to the project directory:
+cd resume
 
-To install **vCard**, follow these steps:
+Open index.html in your browser
 
-Linux and macOS:
+🤝 Contributing
+While this is a personal portfolio, I'm open to suggestions and constructive feedback. Feel free to open an issue or submit a pull request.
+📬 Contact
 
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
+Email: jeffgithinji275@gmail.com
 
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
-
-## Contact
-
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-## License
-
-MIT
+📜 License
+This project is open source and available under the MIT License.

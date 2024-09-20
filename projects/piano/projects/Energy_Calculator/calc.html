@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Saving Calculator</title>
+    <script src="calc_script.js"></script>
+    <link rel="stylesheet" href="project_style.css">
+</head>
+<body id="calc">
+ 
+    
+       <!-- Navbar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="tips.html">Tips & Recommendations</a>
+        <a href="calc.html">Energy Saving Calculator</a>
+        <a href="#">Sensor</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Log in/Sign up</a>
+    </nav>
+    
+
+    <!-- How It Works Section -->
+    <div class="how-it-works-container">
+    <h2>How It Works</h2>
+    <p>This calculator works by taking the values you input in various fields to work out your potential savings and give you some personalized insights based on your usage.</p>
+    <p>The energy cost is how much one kilowatt-hour (kWh) of power would cost in your respective location. Please convert it to dollars before you input a value.</p>
+    <p>The cost savings are calculated by comparing your current energy usage with the optimal usage, assuming 8 hours is optimal for each appliance. The potential savings represent the additional energy you could save by reducing the usage duration beyond the optimal level.</p>
+    <p>The insights provided are tailored to your usage patterns and suggest ways to optimize your energy consumption, thereby saving you money and reducing your environmental footprint.</p>
+    <p>Please check the <a href="tips.html">Tips & Recommendations</a> page for some average figures such as the average energy consumption of common appliances and more.</p>
+    </div>
+
+
+    <!-- Calculator content -->
+    <div class="calculator">
+        <h2>Energy Saving Calculator</h2>
+        <div id="applianceForm">
+            <!-- Appliance input fields will be dynamically added here -->
+        </div>
+        <div class="input-group">
+            <label>Energy Cost ($/kWh)</label>
+            <input type="number" id="energyCost" placeholder="Enter energy cost">
+        </div>
+        <button id="addApplianceBtn">Add Appliance</button>
+        <button id="calculateSavingsBtn">Calculate Savings</button>
+        
+
+        <div class="result" id="savingsResult"></div>
+    </div>
+
+<!-- Personalized insights section -->
+<div class="insights-container" id="insightsContainer" style="display: none;">
+    <div class="insights" id="personalizedInsights">
+        <<!-- Insights will be dynamically added here -->>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-column">
+        <h3>Follow Us</h3>
+        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <div class="footer-column">
+        <h3>Get in Touch</h3>
+        <p>Email: jggithinji@students.ac.ke</p>
+        <p>Phone: +254795677937</p>
+    </div>
+    <div class="footer-column">
+        <h3>Our Services</h3>
+        <a href="calc.html">Energy Saving Calculator</a>
+        <a href="tips.html">Tips & Recommendations</a>
+    </div>
+    <div class="footer-column">
+        <h3>Any Questions?</h3>
+        <p><a href="#">FAQ</a></p>
+    </div>
+</footer>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

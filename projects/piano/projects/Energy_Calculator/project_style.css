@@ -1,0 +1,668 @@
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #E0FFE0;
+        background-size: cover;
+        background-repeat: repeat-y; /* Repeat vertically */
+        background-position: center;
+        height: 100vh; /* Adjust as needed */
+    }
+    
+    
+    .home {
+        margin: 0;
+        padding: 0;
+        background-image: url("images/home2.jpg");
+        background-size: cover;
+        background-repeat: repeat-y; /* Repeat vertically */
+        background-position: center;
+        height: 120vh; /* Adjust as needed */
+    }
+/* nav bar */
+    nav {
+        text-align: center;
+        background-color: #333; /* Change as needed */
+        padding: 20px 0; /* Adjust padding */
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        color: white; /* Change link color */
+        text-decoration: none;
+        margin: 0 15px; /* Adjust spacing between links */
+    }
+
+    nav a:hover {
+        color: #ffd700; /* Change link color on hover */
+    }
+
+    nav a.active {
+        border-bottom: 3px solid yellow; /* Thick yellow underline */
+        padding-bottom: 5px; /* Add space below the text */
+    }
+
+    /* footer */
+
+    footer {
+        background-color: black;
+        padding: 20px; /* Adjust padding as needed */
+        color: white;
+        display: flex;
+        justify-content: space-between; /* Distribute space evenly between columns */
+        font-family: 'Roboto', sans-serif;
+        position: relative; /* Enable relative positioning */
+        margin-top: 50px; /* Create space above the footer */
+      }
+      
+      .footer-column {
+        width: 20%; /* Adjust width as needed */
+      }
+      
+      .footer-column h3 {
+        margin-bottom: 10px;
+        text-decoration: underline;
+      }
+      
+      .footer-column a,
+      .footer-column p {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      
+      .footer-column a:hover {
+        text-decoration: underline;
+      }
+    
+
+    /* home page content */
+
+    .hero-section {
+        background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your image file path */
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #444242;
+        font-size: large;
+        font-style: italic;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .hero-text {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    .hero-text a {
+        display: inline-block;
+        background-color: #b0f07c;
+        color: #1f1e1e;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .hero-text a:hover {
+        background-color: #aab665;
+    }
+
+    /* Styles for the How It Works section */
+#how-it-works {
+    margin-bottom: 30px;
+}
+
+#how-it-works h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#how-it-works p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.how-it-works-container {
+    width: 80%;
+    margin: 0 auto; /* Center the container */
+    background-color: #cfe8cf; /* Light green analogous color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
+}
+
+.how-it-works-container h2 {
+    color: #336633; /* Darker green for headings */
+}
+
+
+/* energy calculator */
+
+
+.calculator {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+h2 {
+    text-align: center;
+}
+.input-group {
+    margin-bottom: 10px;
+}
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+.input-group input[type="number"],
+.input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #75c475;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #48aa48;
+}
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+#calc{
+    margin: 0;
+        padding: 0;
+        background-color: #E0FFE0; /* Light, pale green */
+        background-size: cover;
+        background-repeat: repeat-y; /* Repeat vertically */
+        background-position: center;
+        height: 100vh; /* Adjust as needed */
+}
+
+
+
+
+/* Styles for the personalized insights container */
+.insights-container {
+    width: 80%;
+    margin: 0 auto; /* Center the container horizontally */
+    margin-top: 20px; /* Adjust as needed */
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #cfe8cf; /* Background color for the container */
+}
+
+/* Styles for the personalized insights section */
+.insights {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.insights h3 {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.insights p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* about us */
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the left and right containers */
+    max-width: 960px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+.left-container {
+    width: 48%; /* Adjust the width as needed */
+    padding: 20px; /* Add padding to all sides */
+    padding-right: 10px; /* Add additional padding to the right */
+    background-color: #cfe8cf; /* Background color */
+    float: left; /* Float the container to the left */
+    border-radius: 10px; /* Add rounded edges */
+    margin-right: 2%; /* Adjust margin to create space between containers */
+    margin-left: 0; /* Reset left margin to 0 */
+}
+
+.left-container h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.left-container p{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.right-container {
+    width: 48%; /* Adjust the width as needed */
+    padding: 20px; /* Add padding to all sides */
+    padding-left: 10px; /* Add additional padding to the left */
+    background-color: transparent; /* Background color */
+    float: right; /* Float the container to the right */
+    margin-left: 2%; /* Adjust margin to create space between containers */
+    margin-right: 0; /* Reset right margin to 0 */
+}
+
+.right-container img {
+    max-width: 100%; /* Ensure the image stays within its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Add styling for the mission, vision, and team container */
+.mission-container {
+    background-color: #cfe8cf; /* Light green background color */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+}
+.aboutheader{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+
+}
+.renewable img {
+    display: block; /* Ensure the image is a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+    width: 70%; /* Set the width to 50% */
+    margin-bottom: 20px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.divider {
+    margin: 20px auto; /* Adjust margin as needed */
+    width: 90%; /* Adjust width as needed */
+    border: none;
+    border-top: 2px solid #080808; /* Color and style of the line */
+}
+
+
+.team-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #cfe8cf; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-bottom: 20px;
+}
+
+.team-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 100px; /* Adjust the width of the profile picture */
+    height: auto;
+    border-radius: 50%; /* Round the profile picture */
+    margin-right: 20px;
+}
+
+.member-info h3 {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.member-info p {
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.services-image {
+    width: 50%; /* Take up half of the container */
+    height: 300px; /* Set a fixed height */
+    padding: 20px;
+}
+
+.services-image img {
+    width: 100%; /* Make the image fill its container */
+    height: 100%; /* Make the image fill the container height */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.services-info {
+    width: 50%; /* Take up half of the container */
+    background-color: #cfe8cf; /* Light green background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.services-info h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.services-container p{
+font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+/* tips page */
+.tips-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .tips-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Maintain original width for layout */
+    margin: 0 auto;
+  }
+  
+  .tip-container {
+    background-color: #cfe8cf;
+    border-radius: 10px;
+    padding: 20px;
+    /* Maintain original width for container size */
+  }
+  
+  .content-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tip-image {
+    flex: 0 0 30%; /* Adjust the width of the image */
+    max-width: 32%;
+    height: 250px;
+  }
+  
+  .tip-text {
+    flex: 1; /* Allow text to grow and wrap within container */
+    padding-left: 20px; /* Add padding to separate image and tips */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5; /* Adjust line height for better readability */
+    font-size: larger;
+    font-weight: bold;
+    /* Added word-wrap: break-word; for potential line breaks within words */
+    word-wrap: break-word;
+  }
+  
+  .tip-text .tip {
+    font-size: 16px;
+    /* Added media query to limit font size at higher zoom levels */
+    @media (zoom: 1.5) {
+      font-size: 14px; /* Adjust font size as needed for zoom */
+    }
+  }
+  
+  .tips-facts {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    padding: 20px;
+  }
+  
+  .tips-facts img {
+    max-width: 50%; /* Set maximum width to ensure responsiveness */
+    max-height: 60%; /* Set maximum height to maintain aspect ratio */
+    width: auto; /* Allow the image to scale proportionally */
+    height: auto; /* Allow the image to scale proportionally */
+  }
+
+/* contact */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-form {
+    width: 300px;
+    margin-right: 20px; /* Adjust margin if needed */
+}
+
+.input-box {
+    margin-bottom: 20px;
+    position: relative; /* Add position relative for absolute positioning of span */
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.input-box span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-box input:focus + span,
+.input-box textarea:focus + span,
+.input-box input:not(:placeholder-shown) + span,
+.input-box textarea:not(:placeholder-shown) + span {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* login page styles */
+
+
+.signin-container {
+    background-color: #fff; /* White form background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px;
+    max-width: 400px; /* Limit form width */
+    text-align: center;
+    margin: 0 auto; /* Center the form horizontally */
+    position: relative; /* Needed for vertical centering */
+    top: 50%; /* Vertical centering - adjust as needed */
+    transform: translateY(-50%); /* Vertical centering - adjust as needed */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust logo size */
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 20px; /* Adjust heading size */
+  }
+  
+  .input-box {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #808080; /* Light gray text color */
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .signin-button {  /* Renamed from button[type="submit"] */
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #4285f4; /* Blue button color */
+    color: #fff; /* White button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .signin-button:hover {
+    background-color: #337eef; /* Darker blue on hover */
+  }
+  
+  a {
+    color: #4285f4; /* Blue link color */
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  a:hover {
+    color: #337eef; /* Darker blue on hover */
+  }
+
+  /* Sign up page styles */
+  
+  .signin-container {
+    background-color: #fff; /* White form background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px;
+    max-width: 400px; /* Limit form width */
+    text-align: center;
+    margin: 0 auto; /* Center the form horizontally */
+    margin-top: 100px;
+    position: relative; /* Needed for vertical centering */
+    top: 50%; /* Vertical centering - adjust as needed */
+    transform: translateY(-50%); /* Vertical centering - adjust as needed */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust logo size */
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 20px; /* Adjust heading size */
+  }
+  
+  .input-box {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #808080; /* Light gray text color */
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .signup-button {  /* Renamed from button[type="submit"] */
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

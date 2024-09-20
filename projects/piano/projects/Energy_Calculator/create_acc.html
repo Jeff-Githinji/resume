@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="project_style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="tips.html">Tips & Recommendations</a>
+        <a href="calc.html">Energy Saving Calculator</a>
+        <a href="#">Sensor</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Log in/Sign up</a>
+    </nav>
+
+  <div class="signin-container">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <h1>Create account</h1>
+    <form id="signupForm">
+      <div class="input-box">
+        <label for="name">Your name (optional)</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="input-box">
+        <label for="email">Username or email</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="input-box">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="input-box">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <div class="checkbox-container">
+        <input type="checkbox" id="agreeTerms">
+        <label for="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
+      </div>
+      <button type="submit">Create account</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+
+  <script src="C:\Users\HP\Desktop\resume\projects\Energy_Calculator\js\signup_script.js"></script>
+</body>
+</html>

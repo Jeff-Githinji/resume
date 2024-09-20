@@ -1,0 +1,115 @@
+#content{
+    color: black;
+    margin: 30px 10px 30px 10px;
+    background-color: #ebebeb;
+    padding-bottom: 10px;
+  }
+  
+  #title-container {
+    padding-top: 30px; /* Adjust this value to move the title lower */
+    text-align: center;
+  }
+  
+  #title{
+    font-size: 50px; /* Adjust the font size as needed */
+  }
+  
+  #sub-title{
+    text-align: center;
+    font-size: 20px;
+    
+  }
+  
+  /* Container for the image */
+  #img-div {
+    background-color: white; /* White background for the container */
+    padding: 20px 20px 20px 20px; /* Add padding to create space around the image */
+    border: 1px solid #ccc; /* Optional: Add a subtle border */
+    width: 90%; /* Adjust container width */
+    margin: 0 auto; /* Center the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
+  
+  /* Image styling */
+  #image {
+    max-width: 100%; /* Make the image responsive */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  
+  /* Image caption */
+  #img-caption {
+    font-size: 1.2em;
+    text-align: center;
+    color: #555;
+    margin-top: 20px; /* Space between image and caption */
+  }
+  
+  h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  #tribute-info ul {
+    list-style-type: disc;   /* Keep bullets */
+    padding-left: 20px;      /* Minimum space for the bullets */
+    margin: 0;               /* Remove default margins */
+  }
+  
+  #tribute-info li {
+    margin-bottom: 20px;     /* Add space between list items */
+    text-align: justify;
+    font-size: 20px;     /* Justify the text */
+  }
+  
+  #tribute-info {
+    width: 50%;              /* Control the width of the timeline */
+    margin: 0 auto;          /* Center the timeline container */
+  }
+  
+  #italic{
+    font-style: italic; 
+    font-size: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  
+  #end{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  #tribute-link {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  #tribute-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Container for page numbers */
+  #page-numbers {
+    text-align: center; /* Center-align the page numbers */
+    margin: 30px 0; /* Space above and below the page numbers */
+  }
+  
+  .page-number {
+    display: inline-block; /* Align the numbers in a row */
+    width: 40px; /* Width of the square */
+    height: 40px; /* Height of the square */
+    line-height: 40px; /* Center the text vertically */
+    margin: 0 5px; /* Space between squares */
+    text-align: center; /* Center the text horizontally */
+    background-color: #f0f0f0; /* Background color of the square */
+    border: 1px solid #ccc; /* Border around the square */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Font size of the page numbers */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .page-number:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+  }

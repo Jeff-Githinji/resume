@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment Form</title>
+    <style>
+               nav {
+            text-align: center;
+            background-color: #1f497d; /* Dark blue */
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.active {
+            text-decoration: underline;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1f497d;
+        }
+        label {
+            font-weight: bold;
+            color: #1f497d; /* Dark blue */
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #7eaedd; /* Medium blue */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #1f497d; /* Dark blue */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type="submit"]:hover {
+            background-color: #2a6fa2; /* Slightly lighter shade of dark blue */;
+        }
+
+        @media only screen and (max-width: 600px) {
+        .container {
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <a class="active" href="#home">Home</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#student" class="active">Student</a>
+    </nav>
+
+    <div class="container">
+        <h1>Student Enrollment Form</h1>
+        <form>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="contact">Contact Information:</label>
+            <input type="tel" id="contact" name="contact" required>
+            <label for="emergency_contact">Emergency Contact:</label>
+            <input type="tel" id="emergency_contact" name="emergency_contact" required>
+            
+            <h2>Parent/Guardian Information</h2>
+            <label for="parent_name">Parent/Guardian Name:</label>
+            <input type="text" id="parent_name" name="parent_name" required>
+            <label for="parent_contact">Parent/Guardian Contact:</label>
+            <input type="tel" id="parent_contact" name="parent_contact" required>
+            
+            <h2>Educational History</h2>
+            <label for="previous_school">Previous School Information:</label>
+            <input type="text" id="previous_school" name="previous_school" required>
+            
+            <h2>Health and Demographic Information</h2>
+            <label for="medical_info">Medical Information:</label>
+            <input type="text" id="medical_info" name="medical_info" required>
+            <label for="languages_spoken">Languages Spoken at Home:</label>
+            <input type="text" id="languages_spoken" name="languages_spoken" required>
+            <label for="nationality">Nationality/Race:</label>
+            <input type="text" id="nationality" name="nationality" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

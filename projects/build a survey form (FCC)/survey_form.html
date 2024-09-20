@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="survey_styles.css">
+</head>
+<body>
+  <h1 id="title">Jeff's Survey Form</h1>
+  <p id="description">I'm just showing off</p>
+
+  
+    <form id="survey-form">
+      <fieldset>
+        <label for="name" id="name-label">Name <input id="name" type="text" placeholder="enter your name" required></label>
+      </fieldset>
+      <fieldset>
+        <label for="email" id="email-label">Email <input id="email" type="email" placeholder="enter your email" required></label>
+      </fieldset>
+      <fieldset>
+        <label for="number" id="number-label">Age <input id="number" type="number" min="13" max="99" placeholder="How old are you"></label>
+
+      </fieldset>
+      <fieldset id="genre">
+        <label for="dropdown">What's your favorite genre of music
+          <select id="dropdown">
+            <option>Choose one</option>
+            <option>Hip/Hop</option>
+            <option>R&B</option>
+            <option>Jazz</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Is music a big part of your daily life?</legend>
+        <label for="yes"><input id="yes" type="radio" name="yes" class="inline" value="1"  /> yes </label>
+          <label for="no"><input id="no" type="radio" name="no" value="2" class="inline"  /> no</label>
+          <label for="idk"><input id="idk" type="radio" name="idk" value="3" class="inline" /> never thought about it</label>
+      </fieldset>
+      <fieldset>
+        <legend>Do you pay for any music streaming service? i.e Spotify</legend>
+        <label for="yes"><input id="yes" type="radio" name="yes" class="inline" value="1"  /> yes </label>
+          <label for="no"><input id="no" type="radio" name="no" value="2" class="inline"  /> no</label>
+          <label for="idk"><input id="idk" type="radio" name="idk" value="3" class="inline" /> sometimes</label>
+      </fieldset>
+      <fieldset id="artists">
+        <legend>How many artists here are you familiar with?</legend>
+        <label for="mj"><input type="checkbox" value="1" id="mj" class="inline"> Michael Jackson</label>
+        <label for="luv"><input type="checkbox" value="2" id="luv" class="inline"> Lil Uzi Vert</label>
+        <label for="ush"><input type="checkbox" value="3" id="ush" class="inline"> Usher</label>
+        <label for="bee"><input type="checkbox" value="4" id="bee" class="inline"> Beethoven</label>
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Anything you want me to know about your music taste"></textarea>
+      </fieldset>
+      <input type="submit" id="submit">
+    </form>
+  </div>
+</body>
+</html>

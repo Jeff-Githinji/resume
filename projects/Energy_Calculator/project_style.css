@@ -12,7 +12,7 @@
     .home {
         margin: 0;
         padding: 0;
-        background-image: url("../images/home2.jpg");
+        background-image: url("images/home2.jpg");
         background-size: cover;
         background-repeat: repeat-y; /* Repeat vertically */
         background-position: center;

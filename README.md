@@ -21,7 +21,7 @@ Beautiful minimalistic design
 Clone this repository
 git clone https://github.com/Jeff-Githinji/resume.git
 
-Navigate to the project directory
+Navigate to the project directory:
 cd resume
 
 Open index.html in your browser

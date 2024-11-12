@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <nav id="navbar">
+    <header>HTML & CSS</header>
+    <a href="#Intro_To_HTML_and_CSS" class="nav-link">Intro To HTML and CSS</a>
+    <a href="#HTML_Basics" class="nav-link">HTML Basics</a>
+    <a href="#CSS_Basics" class="nav-link">CSS Basics</a>
+    <a href="#Text_Styling_with_CSS" class="nav-link">Text Styling with CSS</a>
+    <a href="#Layouts_and_Positioning" class="nav-link">Layouts and Positioning</a>
+    <a href="#Responsive_Design" class="nav-link">Responsive Design</a>
+    <a href="#Working_with_Colors_and_Backgrounds" class="nav-link">Working with Colors and Backgrounds</a>
+    <a href="#CSS_Transitions_and_Animations" class="nav-link">CSS Transitions and Animations</a>
+    <a href="#Conclusion" class="nav-link">Conclusion</a>
+    <!-- Add more links as needed -->
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-doc">
+    <section id="Intro_To_HTML_and_CSS" class="main-section">
+      <header>Intro To HTML and CSS</header>
+      <p>HTML (Hypertext Markup Language) structures content on the web. It's used to define elements like headings, paragraphs, images, and links.</p>
+      <p>CSS (Cascading Style Sheets) adds styling, such as colors, fonts, and layout, to make the content visually appealing.</p>
+      <code>console.log("Hello, World!");</code>
+    </section>
+
+    <section id="HTML_Basics" class="main-section">
+      <header>HTML Basics</header>
+      <p>HTML Structure: Begins with &lt;!doctype html&gt;, <html> as the root, and includes &lt;head&gt; for metadata and &lt;body&gt; for visible content. Each tag needs to be closed with the content in the middle, example below:</p>
+
+      <code>
+        <p>&lt;!doctype html&gt;</p>
+        <p>&lt;head&gt;</p>
+        <p> metadata goes here..</p>
+        <p>&lt;/head&gt; -> closing tag</p>
+        <p>&lt;body&gt;</p>
+        <p> visible content goes here..</p>
+        <p>&lt;/body&gt; -> closing tag</p>
+        <p>&lt;/html&gt; -> dont forget to close the very first html tag, this should come last</p>
+      </code>
+    </section>
+
+    <section id="CSS_Basics" class="main-section">
+      <header>CSS Basics</header>
+      <p>CSS Syntax: Consists of selectors, properties, and values, e.g., p { color: red; }.</p>
+      <h3>CSS Application </h3>
+      <p>Inline: Directly in HTML elements (e.g., <span style="color: red;">This text is red</span>).</p>
+      <p>Internal: In the &lt;style&gt; tag within the &lt;head&gt;</p>
+      <p>External: In a separate .css file, linked with &lt;link&gt; in the &lt;head&gt;.</p>
+      <code>var name = "John";</code>
+    </section>
+
+    <section id="Text_Styling_with_CSS" class="main-section">
+      <header>Text Styling with CSS</header>
+      <p>Fonts: Control typeface (font-family), size (font-size), and weight (font-weight).</p>
+      <p>Color: Use color for text color, background-color for background.</p>
+      <p>Alignment: Use text-align to align text left, center, or right.</p>
+      <p>Spacing: line-height for vertical spacing, letter-spacing for space between letters.</p>
+      <code>function greet() { console.log("Hello!"); }</code>
+    </section>
+
+    <section id="Layouts_and_Positioning" class="main-section">
+      <header>Layouts and Positioning</header>
+      <p>Box Model: Elements are treated as boxes with content, padding, border, and margin.</p>
+      <p>Display:
+        <ul>
+          <li>block: Takes full width.</li>
+          <li>inline: Fits content width.</li>
+          <li>inline-block: Combines block and inline.</li>
+        </ul>
+      </p>
+      <p>Positioning:</p>
+      <ul>
+        <li>static: Default positioning.</li>
+        <li>relative: Moves based on its normal position.</li>
+        <li>absolute: Positioned relative to the nearest positioned ancestor.</li>
+        <li>fixed: Stays fixed on the screen.</li>
+      </ul>
+      <p>Float and Clear: Floats elements (e.g., images) to the left or right; clear to prevent overlap.</p>
+      <code>for (let i = 0; i < 5; i++) { console.log(i); }</code>
+    </section>
+
+    <section id="Responsive_Design" class="main-section">
+      <header>Responsive Design</header>
+      <p>Media Queries: Adjust styles based on screen size, e.g., @media (max-width: 600px).</p>
+      <p>Flexible Units: Use percentages, vw, and vh for responsive sizing.</p>
+      <p>Flexbox: A layout model with flexible, responsive containers:</p>
+      <ul>
+        <li>display: flex; for a container.</li>
+        <li>Align items with justify-content and align-items.</li>
+      </ul>
+      <p>CSS Grid: Another layout system for more complex designs with rows and columns.</p>
+      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
+    </section>
+
+    <section id="Working_with_Colors_and_Backgrounds" class="main-section">
+      <header>Working with Colors and Backgrounds</header>
+      <p>Colors: Defined with Hex (#ff0000), RGB (rgb(255, 0, 0)), or HSL (hsl(0, 100%, 50%)).</p>
+      <p>Backgrounds:</p>
+      <ul>
+        <li>Background-color: Sets background color.</li>
+        <li>Background-image: Adds an image as background.</li>
+        <li>Position and Repeat: Control image alignment and repetition.</li>
+      </ul>
+      <p>Gradients: Linear (linear-gradient()) and radial (radial-gradient()) gradients add smooth color transitions.</p>
+      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
+    </section>
+
+    <section id="CSS_Transitions_and_Animations" class="main-section">
+      <header>CSS Transitions and Animations</header>
+      <p>Transitions: Smoothly change properties over time using transition: property duration timing-function;.</p>
+      <p>Animations:</p>
+      <ul>
+        <li>Define with @keyframes for complex sequences.</li>
+        <li>Example: @keyframes slide { from { transform: translateX(0); } to { transform: translateX(100px); } }.</li>
+        <li>Apply with animation: slide 2s infinite;.</li>
+      </ul>
+      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
+    </section>
+
+    <section id="Conclusion" class="main-section">
+      <header>Conclusion</header>
+      <p>Recap: HTML structures content, while CSS styles and positions it for visual appeal. Together, they form the foundation of web development.</p>
+      <p>Next Steps: Learn more about JavaScript for interactivity and explore frameworks like Bootstrap for advanced styling.</p>
+      <p>Resources: Consider W3Schools, MDN, or Codecademy for further learning.</p>
+      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
+    </section>
+
+    <!-- Add more sections as needed -->
+  </main>
+
+</body>
+</html>

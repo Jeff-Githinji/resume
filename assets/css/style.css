@@ -960,8 +960,8 @@ main {
 
 .project-img {
   position: relative;
-  width: 200px;
-  height: 300px;
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
@@ -1888,14 +1888,19 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /*qpid*/
 .qpid{
-  color: rgb(161, 166, 28);
+  color: hsl(45, 100%, 72%);
   text-decoration: underline;
   
 }
 
 /*kakeo*/
 .kakeo{
-  color: rgb(161, 166, 28);
+  color: hsl(45, 100%, 72%);
   text-decoration: underline;
   
+}
+
+.certification{
+  color: hsl(45, 100%, 72%);
+  text-decoration: underline;
 }

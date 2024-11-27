@@ -1,12 +1,13 @@
 
-/* calculator functionality */
+/* Energy Saving Calculator Functionality */
 document.addEventListener("DOMContentLoaded", function() {
-    var appliances = [];
+    // Appliance array to store each added appliance data
+    let appliances = [];
 
     // Function to add an appliance input field
     function addApplianceInput() {
-        var applianceForm = document.getElementById('applianceForm');
-        var newAppliance = `
+        const applianceForm = document.getElementById('applianceForm');
+        const newAppliance = `
             <div class="appliance">
                 <div class="input-group">
                     <label>Appliance Type</label>
@@ -30,154 +31,128 @@ document.addEventListener("DOMContentLoaded", function() {
         applianceForm.insertAdjacentHTML('beforeend', newAppliance);
     }
 
-    // Add event listener to the "Add Appliance" button
-    document.getElementById("addApplianceBtn").addEventListener("click", function() {
-        addApplianceInput();
-    });
+    // Event listener to add appliance inputs
+    document.getElementById("addApplianceBtn").addEventListener("click", addApplianceInput);
 
-
-    // Add event listener to the "Calculate Savings" button
+    // Event listener to calculate savings
     document.getElementById("calculateSavingsBtn").addEventListener("click", function() {
-        var totalUsage = 0;
-        var potentialSavings = 0;
+        let totalUsage = 0;
+        let potentialSavings = 0;
+        const energyCost = parseFloat(document.getElementById('energyCost').value) || 0;
 
-        // Reset appliances array
+        // Clear appliances array for fresh data
         appliances = [];
 
-        // Get input values for each appliance
-        var applianceInputs = document.querySelectorAll('.appliance');
+        // Loop through each appliance input for data extraction
+        const applianceInputs = document.querySelectorAll('.appliance');
         applianceInputs.forEach(function(input) {
-            var type = input.querySelector('.applianceType').value;
-            var usage = parseFloat(input.querySelector('.energyUsage').value);
-            var duration = parseFloat(input.querySelector('.usageDuration').value);
+            const type = input.querySelector('.applianceType').value;
+            const usage = parseFloat(input.querySelector('.energyUsage').value);
+            const duration = parseFloat(input.querySelector('.usageDuration').value);
 
             if (!isNaN(usage) && !isNaN(duration)) {
                 totalUsage += usage * duration;
-                appliances.push({type: type, usage: usage, duration: duration});
+                appliances.push({ type, usage, duration });
             }
         });
 
-        // Calculate potential savings
+        // Calculate potential savings assuming 8 hours optimal usage
         appliances.forEach(function(appliance) {
             if (appliance.duration > 8) {
-                var savings = (appliance.duration - 8) * appliance.usage; // Assuming 8 hours is optimal
-                potentialSavings += savings;
+                const excessUsage = (appliance.duration - 8) * appliance.usage;
+                potentialSavings += excessUsage;
             }
         });
 
         // Display results
-        var resultDisplay = document.getElementById('savingsResult');
-        resultDisplay.innerHTML = "<h3>Total Usage: " + totalUsage.toFixed(2) + " kWh</h3>";
+        displayResults(totalUsage, potentialSavings, energyCost);
 
-        if (potentialSavings > 0) {
-            resultDisplay.innerHTML += "<h3>Potential Savings: " + potentialSavings.toFixed(2) + " kWh</h3>";
-            resultDisplay.innerHTML += "<p>This could save you approximately $" + (potentialSavings * parseFloat(document.getElementById('energyCost').value)).toFixed(2) + ".</p>"; // Calculation based on energy cost
-        }
-
-        // Generate personalized insights
+        // Generate and display personalized insights
         generateInsights(appliances);
-
-        // Update the display of insights container after calculations
-        updateInsightsDisplay(true); // Show the insights container
     });
 
-    // Function to generate personalized insights
+    // Display total usage and potential savings
+    function displayResults(totalUsage, potentialSavings, energyCost) {
+        const resultDisplay = document.getElementById('savingsResult');
+        resultDisplay.innerHTML = `<h3>Total Usage: ${totalUsage.toFixed(2)} kWh</h3>`;
+
+        if (potentialSavings > 0) {
+            const savingsAmount = (potentialSavings * energyCost).toFixed(2);
+            resultDisplay.innerHTML += `<h3>Potential Savings: ${potentialSavings.toFixed(2)} kWh</h3>`;
+            resultDisplay.innerHTML += `<p>This could save you approximately $${savingsAmount}.</p>`;
+        }
+    }
+
+    // Generate personalized insights based on usage patterns
     function generateInsights(appliances) {
-        var insightsDisplay = document.getElementById('personalizedInsights');
+        const insightsDisplay = document.getElementById('personalizedInsights');
         insightsDisplay.innerHTML = ''; // Clear previous insights
 
-        // Define thresholds for energy usage and usage duration
-        var highEnergyThreshold = 100; // kWh
-        var longDurationThreshold = 8; // hours
-
-        // Add heading to the insights container
-        var heading = document.createElement('h2');
-        heading.textContent = "Your Personal Insights";
-        insightsDisplay.appendChild(heading);
-
         appliances.forEach(function(appliance) {
-            var insights = [];
+            const insights = [];
+            const highEnergyThreshold = 100; // High usage threshold in kWh
+            const longDurationThreshold = 8; // Long usage threshold in hours
 
             // Check for high energy usage
             if (appliance.usage > highEnergyThreshold) {
-                insights.push("Your " + appliance.type + " consumes a high amount of energy. Consider replacing it with a more energy-efficient model.");
+                insights.push(`Your ${appliance.type} consumes a high amount of energy. Consider a more efficient model.`);
             }
 
-            // Check for long usage duration
+            // Check for extended usage duration
             if (appliance.duration > longDurationThreshold) {
-                insights.push("You're using your " + appliance.type + " for a long duration each day. Reducing usage time can lead to significant energy savings.");
+                insights.push(`Your ${appliance.type} is used for an extended period daily. Reducing usage time could save energy.`);
             }
 
-            // Display insights for this appliance
+            // Display appliance-specific insights
             if (insights.length > 0) {
-                insightsDisplay.innerHTML += "<h3>" + appliance.type + " Insights</h3>";
+                insightsDisplay.innerHTML += `<h3>${appliance.type} Insights</h3>`;
                 insights.forEach(function(insight) {
-                    insightsDisplay.innerHTML += "<p>" + insight + "</p>";
+                    insightsDisplay.innerHTML += `<p>${insight}</p>`;
                 });
             }
         });
     }
 
-    // Update the display of insights container after calculations
-    function updateInsightsDisplay(show) {
-        var insightsContainer = document.getElementById('insightsContainer');
-        insightsContainer.style.display = show ? 'block' : 'none';
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the current URL
-    var currentUrl = window.location.href;
-
-    // Get all navigation links
-    var navLinks = document.querySelectorAll("nav a");
-
-    // Loop through each navigation link
-    navLinks.forEach(function(link) {
-        // Compare the href attribute of the link with the current URL
+    // Highlight active navigation links based on the current page
+    const currentUrl = window.location.href;
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
         if (link.href === currentUrl) {
-            // Add the active class to the link if it matches the current URL
             link.classList.add("active");
         }
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // Contact form submission handling with Fetch API
     const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form's default submission behavior
+            const formData = new FormData(contactForm);
+            const encodedFormData = new URLSearchParams(formData).toString();
 
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Get form data
-        const formData = new FormData(contactForm);
-
-        // Create a URL-encoded string of form data
-        const encodedFormData = new URLSearchParams(formData).toString();
-
-        // Send form data to PHP script using fetch API
-        fetch("process_contact_form.php", {
-            method: "POST",
-            body: encodedFormData,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Form submission successful
-                console.log("Form submitted successfully!");
-                // Optionally, reset the form after successful submission
-                contactForm.reset();
-            } else {
-                // Form submission failed
-                console.error("Form submission failed!");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
+            // Submit form data to PHP script
+            fetch("process_contact_form.php", {
+                method: "POST",
+                body: encodedFormData,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully!");
+                    contactForm.reset();
+                } else {
+                    console.error("Form submission failed!");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         });
-    });
+    }
 });
+
 
 
 

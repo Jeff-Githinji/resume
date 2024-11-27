@@ -155,98 +155,117 @@
 /* energy calculator */
 
 
-.calculator {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+/* Enhanced styling for better contrast and accessibility */
+.calculator-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-h2 {
-    text-align: center;
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
+
+h3 {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.calculator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-section,
+.result-section {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
 .input-group {
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
+
 .input-group label {
-    display: block;
-    font-weight: bold;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
 }
-.input-group input[type="number"],
+
+.input-group input,
 .input-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #75c475;
-    color: white;
-    cursor: pointer;
+
+input:focus, select:focus {
+  border-color: #48aa48;
+  outline: none;
 }
-button:hover {
-    background-color: #48aa48;
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.btn-primary {
+  background-color: #75c475;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #48aa48;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #3e8e41;
+}
+
 .result {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-}
-#calc{
-    margin: 0;
-        padding: 0;
-        background-color: #E0FFE0; /* Light, pale green */
-        background-size: cover;
-        background-repeat: repeat-y; /* Repeat vertically */
-        background-position: center;
-        height: 100vh; /* Adjust as needed */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
-
-
-
-/* Styles for the personalized insights container */
-.insights-container {
-    width: 80%;
-    margin: 0 auto; /* Center the container horizontally */
-    margin-top: 20px; /* Adjust as needed */
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    background-color: #cfe8cf; /* Background color for the container */
-}
-
-/* Styles for the personalized insights section */
 .insights {
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.insights h3 {
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.insights p {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 5px;
-}
 
 /* about us */
 

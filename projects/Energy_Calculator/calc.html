@@ -33,29 +33,28 @@
     </div>
 
 
-    <!-- Calculator content -->
-    <div class="calculator">
-        <h2>Energy Saving Calculator</h2>
-        <div id="applianceForm">
-            <!-- Appliance input fields will be dynamically added here -->
-        </div>
+    <!-- Updated Calculator content -->
+<div class="calculator-container" role="form" aria-labelledby="calculator-title">
+    <h2 id="calculator-title">Energy Saving Calculator</h2>
+    <div class="calculator-content">
+      <div class="input-section" aria-labelledby="input-section-title">
+        <h3 id="input-section-title">Input Your Appliance Details</h3>
         <div class="input-group">
-            <label>Energy Cost ($/kWh)</label>
-            <input type="number" id="energyCost" placeholder="Enter energy cost">
+          <label for="energyCost">Energy Cost ($/kWh)</label>
+          <input type="number" id="energyCost" placeholder="Enter energy cost" aria-required="true">
         </div>
-        <button id="addApplianceBtn">Add Appliance</button>
-        <button id="calculateSavingsBtn">Calculate Savings</button>
-        
-
-        <div class="result" id="savingsResult"></div>
-    </div>
-
-<!-- Personalized insights section -->
-<div class="insights-container" id="insightsContainer" style="display: none;">
-    <div class="insights" id="personalizedInsights">
-        <<!-- Insights will be dynamically added here -->>
+        <div id="applianceForm"></div>
+        <button id="addApplianceBtn" class="btn btn-primary" aria-label="Add an appliance">Add Appliance</button>
+      </div>
+      <div class="result-section" aria-labelledby="results-section-title">
+        <h3 id="results-section-title">Results</h3>
+        <button id="calculateSavingsBtn" class="btn btn-success" aria-label="Calculate savings">Calculate Savings</button>
+        <div id="savingsResult" class="result" aria-live="polite"></div>
+        <div id="personalizedInsights" class="insights" aria-live="polite"></div>
+      </div>
     </div>
 </div>
+
 
 <footer>
     <div class="footer-column">

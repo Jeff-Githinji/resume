@@ -6,80 +6,236 @@
     <title>Energy Saving Calculator</title>
     <script src="calc_script.js"></script>
     <link rel="stylesheet" href="project_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body id="calc">
  
     
        <!-- Navbar -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="tips.html">Tips & Recommendations</a>
-        <a href="calc.html">Energy Saving Calculator</a>
-        <a href="#">Sensor</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Log in/Sign up</a>
+       <nav class="navbar">
+        <div class="nav-content">
+            <!-- Optional: Add your logo here -->
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <span>Energy Saver</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips</a>
+                <a href="calc.html"><i class="fas fa-calculator"></i> Calculator</a>
+                <a href="sensors.html"><i class="fas fa-microchip"></i> Sensor</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <div class="user-menu" id="authButton">
+                    <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="#" class="username-btn"><i class="fas fa-user"></i> <span id="username">User</span></a>
+                        <div class="dropdown-content">
+                            <a href="javascript:void(0)" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     
 
     <!-- How It Works Section -->
-    <div class="how-it-works-container">
-    <h2>How It Works</h2>
-    <p>This calculator works by taking the values you input in various fields to work out your potential savings and give you some personalized insights based on your usage.</p>
-    <p>The energy cost is how much one kilowatt-hour (kWh) of power would cost in your respective location. Please convert it to dollars before you input a value.</p>
-    <p>The cost savings are calculated by comparing your current energy usage with the optimal usage, assuming 8 hours is optimal for each appliance. The potential savings represent the additional energy you could save by reducing the usage duration beyond the optimal level.</p>
-    <p>The insights provided are tailored to your usage patterns and suggest ways to optimize your energy consumption, thereby saving you money and reducing your environmental footprint.</p>
-    <p>Please check the <a href="tips.html">Tips & Recommendations</a> page for some average figures such as the average energy consumption of common appliances and more.</p>
-    </div>
-
-
-    <!-- Updated Calculator content -->
-<div class="calculator-container" role="form" aria-labelledby="calculator-title">
-    <h2 id="calculator-title">Energy Saving Calculator</h2>
-    <div class="calculator-content">
-      <div class="input-section" aria-labelledby="input-section-title">
-        <h3 id="input-section-title">Input Your Appliance Details</h3>
-        <div class="input-group">
-          <label for="energyCost">Energy Cost ($/kWh)</label>
-          <input type="number" id="energyCost" placeholder="Enter energy cost" aria-required="true">
+    <section class="how-it-works">
+        <div class="container">
+            <h2><i class="fas fa-info-circle"></i> How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Input Electricity Rate</h3>
+                    <p>Enter your local electricity rate (Ksh/kWh) to calculate accurate cost savings.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Enter Appliance Details</h3>
+                    <p>Add your appliances and their power ratings. Don't know the watts? Check our Tips page for common values.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Input Usage Time</h3>
+                    <p>Specify how many hours each appliance is used daily. The calculator assumes 8 hours as optimal usage.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Get Insights</h3>
+                    <p>View your energy usage, costs, and environmental impact, along with personalized saving recommendations.</p>
+                </div>
+            </div>
         </div>
-        <div id="applianceForm"></div>
-        <button id="addApplianceBtn" class="btn btn-primary" aria-label="Add an appliance">Add Appliance</button>
-      </div>
-      <div class="result-section" aria-labelledby="results-section-title">
-        <h3 id="results-section-title">Results</h3>
-        <button id="calculateSavingsBtn" class="btn btn-success" aria-label="Calculate savings">Calculate Savings</button>
-        <div id="savingsResult" class="result" aria-live="polite"></div>
-        <div id="personalizedInsights" class="insights" aria-live="polite"></div>
-      </div>
-    </div>
-</div>
+    </section>
+
+    <!-- Updated Calculator Structure -->
+    <section class="calculator-hero">
+        <div class="calculator-hero-content">
+            <h1>Energy Savings Calculator</h1>
+            <p>Calculate your potential savings and environmental impact</p>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <div class="calculator-grid">
+                <!-- Input Section -->
+                <div class="calculator-form">
+                    <div id="errorMessage" class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Please fill in all required fields</span>
+                    </div>
+                    
+                    <h2>Enter Your Details</h2>
+                    
+                    <!-- Electricity Rate First -->
+                    <div class="input-group rate-group">
+                        <label>Electricity Rate (Ksh/kWh)</label>
+                        <input type="number" id="rate" placeholder="e.g., 25" class="short-input">
+                    </div>
+
+                    <div id="appliances-container">
+                        <div class="appliance-entry">
+                            <div class="input-group">
+                                <label>Appliance Name</label>
+                                <div class="appliance-input-group">
+                                    <select class="appliance-select" onchange="updateWattage(this)">
+                                        <option value="">Select an appliance or type below</option>
+                                        <option value="refrigerator">Refrigerator (150-400W)</option>
+                                        <option value="tv">Television (80-400W)</option>
+                                        <option value="ac">Air Conditioner (1000-3500W)</option>
+                                        <option value="washer">Washing Machine (500-900W)</option>
+                                        <option value="microwave">Microwave (600-1500W)</option>
+                                        <option value="iron">Iron (1000-2000W)</option>
+                                        <option value="computer">Computer (150-300W)</option>
+                                        <option value="fan">Fan (50-100W)</option>
+                                        <option value="bulb">Light Bulb (40-100W)</option>
+                                        <option value="water_heater">Water Heater (3000-4500W)</option>
+                                    </select>
+                                    <input type="text" class="appliance-name" placeholder="or type appliance name">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Power Rating (Watts)</label>
+                                <input type="number" class="watts short-input" placeholder="e.g., 100">
+                            </div>
+                            <div class="input-group">
+                                <label>Hours Used Per Day</label>
+                                <input type="number" class="hours short-input" placeholder="e.g., 8">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-appliance" onclick="addAppliance()">
+                        <i class="fas fa-plus"></i> Add Another Appliance
+                    </button>
+
+                    <button class="btn-calculate" onclick="calculateTotalSavings()">
+                        <i class="fas fa-calculator"></i> Calculate Total Savings
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="calculator-results" id="result">
+                    <h2>Your Results</h2>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <i class="fas fa-bolt"></i>
+                            <h3>Daily Usage</h3>
+                            <p id="dailyUsage">0 kWh</p>
+                        </div>
+                        
+                        <div class="result-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Monthly Usage</h3>
+                            <p id="monthlyUsage">0 kWh</p>
+                        </div>
+                        
+                        <div class="result-card">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h3>Monthly Cost</h3>
+                            <p id="monthlyCost">Ksh 0</p>
+                        </div>
+                        
+                        <div class="result-card">
+                            <i class="fas fa-leaf"></i>
+                            <h3>CO2 Impact</h3>
+                            <p id="co2Impact">0 kg</p>
+                        </div>
+                    </div>
+
+                    <!-- New Savings and Insights Section -->
+                    <div class="insights-section">
+                        <div class="potential-savings">
+                            <h3><i class="fas fa-piggy-bank"></i> Potential Monthly Savings</h3>
+                            <p id="potentialSavings">Ksh 0</p>
+                        </div>
+                        
+                        <div class="usage-insights">
+                            <h3><i class="fas fa-lightbulb"></i> Usage Insights</h3>
+                            <ul id="insightsList">
+                                <!-- Insights will be added here dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 <footer>
-    <div class="footer-column">
-        <h3>Follow Us</h3>
-        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3><i class="fas fa-hashtag"></i> Follow Us</h3>
+            <div class="social-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3><i class="fas fa-envelope"></i> Get in Touch</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> jggithinji@students.ac.ke</p>
+                <p><i class="fas fa-phone"></i> +254795677937</p>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3><i class="fas fa-tools"></i> Our Services</h3>
+            <a href="calc.html"><i class="fas fa-calculator"></i> Energy Saving Calculator</a>
+            <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips & Recommendations</a>
+        </div>
+        <div class="footer-column">
+            <h3><i class="fas fa-question-circle"></i> Any Questions?</h3>
+            <a href="#"><i class="fas fa-file-alt"></i> FAQ</a>
+        </div>
     </div>
-    <div class="footer-column">
-        <h3>Get in Touch</h3>
-        <p>Email: jggithinji@students.ac.ke</p>
-        <p>Phone: +254795677937</p>
-    </div>
-    <div class="footer-column">
-        <h3>Our Services</h3>
-        <a href="calc.html">Energy Saving Calculator</a>
-        <a href="tips.html">Tips & Recommendations</a>
-    </div>
-    <div class="footer-column">
-        <h3>Any Questions?</h3>
-        <p><a href="#">FAQ</a></p>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Energy Saver. All rights reserved.</p>
     </div>
 </footer>
    
+    
+    <script src="calc_script.js"></script>
+    <script src="nav_script.js"></script>
 </body>
 </html>
 

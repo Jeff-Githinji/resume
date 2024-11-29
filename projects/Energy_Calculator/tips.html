@@ -5,139 +5,195 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Website</title>
 <link rel="stylesheet" href="project_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     
     <!-- Navbar -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="tips.html">Tips & Recommendations</a>
-        <a href="calc.html">Energy Saving Calculator</a>
-        <a href="#">Sensor</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Log in/Sign up</a>
+    <nav class="navbar">
+        <div class="nav-content">
+            <!-- Optional: Add your logo here -->
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <span>Energy Saver</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips</a>
+                <a href="calc.html"><i class="fas fa-calculator"></i> Calculator</a>
+                <a href="sensors.html"><i class="fas fa-microchip"></i> Sensor</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <div class="user-menu" id="authButton">
+                    <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="#" class="username-btn"><i class="fas fa-user"></i> <span id="username">User</span></a>
+                        <div class="dropdown-content">
+                            <a href="javascript:void(0)" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     
 
-<!-- Your content goes here -->
-    <div class="tips-header">
-        <h1>Empower Your Energy Efficiency: Tips & Recommendations</h1>
-        
-    </div>
+    <!-- Hero Section -->
+    <section class="tips-hero">
+        <div class="tips-hero-content">
+            <h1>Energy Saving Tips & Guidelines</h1>
+            <p>Discover smart ways to reduce your energy consumption and save money</p>
+        </div>
+    </section>
 
-    <section class="tips-page">
-        <div class="tip-container">
-            <div class="content-container">
-                <img src="images/lightbulb2.jpg" alt="Lightbulb Image" class="tip-image">
-                <div class="tip-text">
-                    <p class="tip">LED Lights: Switching to LED light bulbs can save a significant amount of energy compared to traditional incandescent bulbs. LEDs use up to 80% less energy and can last up to 25 times longer.</p>
+    <!-- Quick Tips Section -->
+    <section class="quick-tips-section">
+        <div class="container">
+            <h2>Quick Energy Saving Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>LED Lighting</h3>
+                    <p>Switch to LED bulbs to use 80% less energy and enjoy up to 25 times longer lifespan compared to traditional bulbs.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Unplug Electronics</h3>
+                    <p>Unplug idle electronics to prevent phantom energy consumption and reduce your electricity bill.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Energy Star Appliances</h3>
+                    <p>Choose ENERGY STAR certified appliances for optimal energy efficiency and long-term savings.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Cold Water Washing</h3>
+                    <p>Use cold water for laundry to save energy and maintain clothing quality.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="divider">
-    
-    <section class="tips-page">
-        <div class="tip-container">
-            <div class="content-container">
-                <img src="images/plug.jpg" alt="plug Image" class="tip-image">
-                <div class="tip-text">
-                    <p class="tip">Eco-Chic Electronics: Elevate your electronic lifestyle with a touch of eco-chic sophistication. Unplug those idle electronics to save power and transform your home into an energy-efficient haven. By unplugging devices when not in use, you'll not only reduce your carbon footprint but also save money on your electricity bill, all while adding a stylishly sustainable flair to your everyday routine.</p>
+    <!-- Common Appliance Usage Section -->
+    <section class="appliance-usage-section">
+        <div class="container">
+            <h2>Common Appliance Energy Usage</h2>
+            <div class="appliance-grid">
+                <div class="appliance-card">
+                    <img src="images/refrigerator-icon.png" alt="Refrigerator">
+                    <h3>Refrigerator</h3>
+                    <p>Average: 150-200 watts</p>
+                    <p>Monthly Usage: 108-144 kWh</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <hr class="divider">
-    
-    <section class="tips-page">
-        <div class="tip-container">
-            <div class="content-container">
-                <img src="images/energystar.jpg" alt="energy Image" class="tip-image">
-                <div class="tip-text">
-                    <p class="tip">Efficiency Elegance: Embrace efficiency with elegance as you make energy-efficient appliance choices. Opt for appliances adorned with the ENERGY STAR label, where beauty meets functionality. These appliances not only add a touch of elegance to your home but also deliver superior energy efficiency, helping you save money and the environment without compromising on style.</p>
+                <div class="appliance-card">
+                    <img src="images/washing-machine-icon.png" alt="Washing Machine">
+                    <h3>Washing Machine</h3>
+                    <p>Average: 400-1300 watts</p>
+                    <p>Per Load: 0.6-2.0 kWh</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <hr class="divider">
-
-    <section class="tips-page">
-        <div class="tip-container">
-            <div class="content-container">
-                <img src="images/coldwater.jpg" alt="water Image" class="tip-image">
-                <div class="tip-text">
-                    <p class="tip">Cold Water Couture: Make a splash with cold water couture and revolutionize your laundry routine. Embrace the elegance of washing clothes in cold water, where fashion meets function. By opting for cold water, you'll not only preserve the vibrancy of your clothes but also save energy and money, all while making a chic and eco-friendly statement with every wash.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-
-    <div class="tips-facts">
-        <img src="images/fun fact.jpeg" alt="fun fact">
-        
-    </div>
-
-    <section class="tips-page">
-        <div class="tip-container">
-            <div class="content-container">
-                <img src="images/graph2.webp" alt="graph Image" class="tip-image">
-                <div class="tip-text">
-                    <p class="tip">Energetic Enigmas: Did you know? The average American household spends over $2,000 a year on energy bills. It's time to unlock the mysteries of energy savings and start putting money back in your pocket! We can get you started, just head to the calculator</p>
-                </div>
+                <!-- Add more appliance cards -->
             </div>
         </div>
     </section>
 
-    <hr class="divider">
+    <!-- Detailed Tips Section -->
+    <section class="detailed-tips-section">
+        <div class="container">
+            <h2>Detailed Energy Saving Strategies</h2>
+            <div class="detailed-tips-grid">
+                <div class="detailed-tip">
+                    <div class="tip-image">
+                        <img src="images/lightbulb2.jpg" alt="LED Lighting">
+                    </div>
+                    <div class="tip-content">
+                        <h3>Smart Lighting Solutions</h3>
+                        <p>LED lights are not just energy-efficient; they're a smart investment. Here's why:</p>
+                        <ul>
+                            <li>Use 80% less energy than traditional bulbs</li>
+                            <li>Last up to 25 times longer</li>
+                            <li>Produce less heat</li>
+                            <li>Available in various colors and brightness levels</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Add more detailed tips -->
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <div class="footer-column">
-        <h3>Follow Us</h3>
-        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-    <div class="footer-column">
-        <h3>Get in Touch</h3>
-        <p>Email: jggithinji@students.ac.ke</p>
-        <p>Phone: +254795677937</p>
-    </div>
-    <div class="footer-column">
-        <h3>Our Services</h3>
-        <a href="calc.html">Energy Saving Calculator</a>
-        <a href="tips.html">Tips & Recommendations</a>
-    </div>
-    <div class="footer-column">
-        <h3>Any Questions?</h3>
-        <p><a href="#">FAQ</a></p>
-    </div>
-</footer>
+    <!-- Energy Facts Section -->
+    <section class="energy-facts-section">
+        <div class="container">
+            <h2>Did You Know?</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Average Consumption</h3>
+                    <p>The average household spends over $2,000 annually on energy bills.</p>
+                </div>
+                <!-- Add more fact cards -->
+            </div>
+        </div>
+    </section>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    // Get the current URL
-    var currentUrl = window.location.href;
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Saving?</h2>
+            <p>Use our calculator to estimate your potential savings</p>
+            <a href="calc.html" class="cta-button">Try Our Calculator</a>
+        </div>
+    </section>
 
-    // Get all navigation links
-    var navLinks = document.querySelectorAll("nav a");
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><i class="fas fa-hashtag"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-envelope"></i> Get in Touch</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> jggithinji@students.ac.ke</p>
+                    <p><i class="fas fa-phone"></i> +254795677937</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-tools"></i> Our Services</h3>
+                <a href="calc.html"><i class="fas fa-calculator"></i> Energy Saving Calculator</a>
+                <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips & Recommendations</a>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-question-circle"></i> Any Questions?</h3>
+                <a href="#"><i class="fas fa-file-alt"></i> FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Energy Saver. All rights reserved.</p>
+        </div>
+    </footer>
 
-    // Loop through each navigation link
-    navLinks.forEach(function(link) {
-        // Compare the href attribute of the link with the current URL
-        if (link.href === currentUrl) {
-            // Add the active class to the link if it matches the current URL
-            link.classList.add("active");
-        }
-    });
-});
-
-</script>
+<script src="nav_script.js"></script>
 </body>
 </html>

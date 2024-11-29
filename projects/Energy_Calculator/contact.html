@@ -5,92 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us</title>
 <link rel="stylesheet" href="project_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="tips.html">Tips & Recommendations</a>
-        <a href="calc.html">Energy Saving Calculator</a>
-        <a href="#">Sensor</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Log in/Sign up</a>
+    <nav class="navbar">
+        <div class="nav-content">
+            <!-- Optional: Add your logo here -->
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <span>Energy Saver</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips</a>
+                <a href="calc.html"><i class="fas fa-calculator"></i> Calculator</a>
+                <a href="sensors.html"><i class="fas fa-microchip"></i> Sensor</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <div class="user-menu" id="authButton">
+                    <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="#" class="username-btn"><i class="fas fa-user"></i> <span id="username">User</span></a>
+                        <div class="dropdown-content">
+                            <a href="javascript:void(0)" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     
-    <!-- Your content goes here -->
-    <section class="contact-container">
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form id="contactForm">
-                <div class="input-box">
-                    <input type="text" name="firstName" required>
-                    <span>First Name</span>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <!-- Contact Info Card -->
+            <div class="contact-info-card">
+                <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+                <div class="info-items-container">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+254795677937</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>jggithinji@students.ac.ke</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-box">
-                    <input type="text" name="lastName" required>
-                    <span>Last Name</span>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <div class="input-box">
-                    <input type="email" name="email" required>
-                    <span>Email Address</span>
-                </div>
-                <div class="input-box">
-                    <textarea name="message" required></textarea>
-                    <span>Message</span>
-                </div>
-                <div class="input-box">
-                    <input type="submit" value="Send Message">
-                </div>
-            </form>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="contact-form-card">
+                <h2><i class="fas fa-paper-plane"></i> Send us a message</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-column">
-            <h3>Follow Us</h3>
-            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><i class="fas fa-hashtag"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-envelope"></i> Get in Touch</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> jggithinji@students.ac.ke</p>
+                    <p><i class="fas fa-phone"></i> +254795677937</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-tools"></i> Our Services</h3>
+                <a href="calc.html"><i class="fas fa-calculator"></i> Energy Saving Calculator</a>
+                <a href="tips.html"><i class="fas fa-lightbulb"></i> Tips & Recommendations</a>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-question-circle"></i> Any Questions?</h3>
+                <a href="#"><i class="fas fa-file-alt"></i> FAQ</a>
+            </div>
         </div>
-        <div class="footer-column">
-            <h3>Get in Touch</h3>
-            <p>Email: jggithinji@students.ac.ke</p>
-            <p>Phone: +254795677937</p>
-        </div>
-        <div class="footer-column">
-            <h3>Our Services</h3>
-            <a href="calc.html">Energy Saving Calculator</a>
-            <a href="tips.html">Tips & Recommendations</a>
-        </div>
-        <div class="footer-column">
-            <h3>Any Questions?</h3>
-            <p><a href="#">FAQ</a></p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Energy Saver. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        // Get the current URL
-        var currentUrl = window.location.href;
+    <script src="nav_script.js"></script>
     
-        // Get all navigation links
-        var navLinks = document.querySelectorAll("nav a");
-    
-        // Loop through each navigation link
-        navLinks.forEach(function(link) {
-            // Compare the href attribute of the link with the current URL
-            if (link.href === currentUrl) {
-                // Add the active class to the link if it matches the current URL
-                link.classList.add("active");
-            }
-        });
-    });
-    
-    </script>
-<script src="C:\Users\HP\Desktop\resume\projects\Energy_Calculator\js\calc_script.js"></script>
 </body>
 </html>
 

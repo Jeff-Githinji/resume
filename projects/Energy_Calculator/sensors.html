@@ -41,67 +41,56 @@
             </div>
         </div>
     </nav>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Sensor Data</h2>
     
-    
-
-<!-- Your content goes here -->
-
-<section class="hero-section">
-    <div class="hero-content">
-        <h1>Empower Your Energy Efficiency Journey</h1>
-        <p>Harnessing Technology to Reduce Costs and Carbon Footprint. Join us in revolutionizing how you manage electricity consumption with personalized insights and actionable recommendations, paving the way towards a sustainable future.</p>
-        <a href="about.html" class="cta-button">Learn More</a>
-    </div>
-</section>
-
-<section class="features-section">
-    <div class="container">
-        <h2>Our Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-calculator"></i>
-                <h3>Energy Calculator</h3>
-                <p>Estimate your energy usage and discover potential savings with our comprehensive calculator.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Energy Tips</h3>
-                <p>Get practical recommendations for optimizing energy efficiency in your home and workplace.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-microchip"></i>
-                <h3>Smart Monitoring</h3>
-                <p>Track your energy consumption in real-time with our sensor integration system.</p>
+    <!-- Sensor Status Card -->
+    <div class="card mb-4 bg-dark text-light border-info">
+        <div class="card-header">
+            <h4>Sensor Status</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Connection Status:</strong> <span class="text-success">Connected</span></p>
+                    <p><strong>Last Updated:</strong> <span id="lastUpdate">--</span></p>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-info">Refresh Data</button>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<section class="testimonials-section">
-    <div class="container">
-        <h2>What Our Users Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p>"Energy Saver has transformed the way I manage my electricity usage. The insights are invaluable!"</p>
-                <h4>- Alex Johnson</h4>
+    <!-- Sensor Readings Card -->
+    <div class="card bg-dark text-light border-info">
+        <div class="card-header">
+            <h4>Current Readings</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sensor-reading text-center">
+                        <h5>Temperature</h5>
+                        <p class="display-4" id="temperature">--°C</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sensor-reading text-center">
+                        <h5>Humidity</h5>
+                        <p class="display-4" id="humidity">--%</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sensor-reading text-center">
+                        <h5>Light Level</h5>
+                        <p class="display-4" id="light">--</p>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-card">
-                <p>"Thanks to Energy Saver, I've reduced my energy bills by 20%! Highly recommend it."</p>
-                <h4>- Sarah Williams</h4>
-            </div>
-            <!-- Add more testimonials as needed -->
         </div>
     </div>
-</section>
-
-<section class="cta-section">
-    <div class="container">
-        <h2>Ready to Start Saving?</h2>
-        <p>Use our calculator to estimate your potential savings</p>
-        <a href="calc.html" class="cta-button">Try Our Calculator</a>
-    </div>
-</section>
-
+</div>
 <footer>
     <div class="footer-content">
         <div class="footer-column">
@@ -150,3 +139,7 @@
 <script src="nav_script.js"></script>
 </body>
 </html>
+
+<!-- Add this to your existing CSS or style block -->
+
+

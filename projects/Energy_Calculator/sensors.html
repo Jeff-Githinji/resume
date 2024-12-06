@@ -65,26 +65,85 @@
     <!-- Sensor Readings Card -->
     <div class="card bg-dark text-light border-info">
         <div class="card-header">
-            <h4>Current Readings</h4>
+            <h4>Power Readings</h4>
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="sensor-reading text-center">
-                        <h5>Temperature</h5>
-                        <p class="display-4" id="temperature">--°C</p>
+                        <h5>Voltage</h5>
+                        <p class="display-4" id="voltage">--V</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="sensor-reading text-center">
-                        <h5>Humidity</h5>
-                        <p class="display-4" id="humidity">--%</p>
+                        <h5>Current</h5>
+                        <p class="display-4" id="current">--A</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="sensor-reading text-center">
-                        <h5>Light Level</h5>
-                        <p class="display-4" id="light">--</p>
+                        <h5>Power</h5>
+                        <p class="display-4" id="power">--W</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sensor-reading text-center">
+                        <h5>Total Energy</h5>
+                        <p class="display-4" id="totalEnergy">--kWh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="alert" id="deviceStatus">
+                        Device Status: Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Power Insights Card -->
+    <div class="card bg-dark text-light border-info mt-4">
+        <div class="card-header">
+            <h4>Power Insights</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Cost Estimates -->
+                <div class="col-md-6">
+                    <div class="insight-card">
+                        <h5><i class="fas fa-money-bill"></i> Cost Estimates</h5>
+                        <ul class="insight-list">
+                            <li>Hourly Cost: <span id="hourlyCost">--</span></li>
+                            <li>Daily Cost: <span id="dailyCost">--</span></li>
+                            <li>Monthly Estimate: <span id="monthlyCost">--</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Usage Analysis -->
+                <div class="col-md-6">
+                    <div class="insight-card">
+                        <h5><i class="fas fa-chart-line"></i> Usage Analysis</h5>
+                        <ul class="insight-list">
+                            <li>Power Status: <span id="powerStatus">--</span></li>
+                            <li>Usage Level: <span id="usageLevel">--</span></li>
+                            <li>Efficiency Rating: <span id="efficiencyRating">--</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="insight-card">
+                        <h5><i class="fas fa-lightbulb"></i> Recommendations</h5>
+                        <div id="recommendations" class="recommendations-list">
+                            Loading recommendations...
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,9 +196,59 @@
 </footer>
 
 <script src="nav_script.js"></script>
+<script src="sensorAPI.js"></script>
 </body>
 </html>
 
 <!-- Add this to your existing CSS or style block -->
+
+/* Container for each appliance entry */
+.appliance-entry {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px; /* Limit maximum width */
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px; /* Match container width */
+}
+
+/* Input fields */
+.input-group input,
+.input-group select {
+    width: 100%;
+    max-width: 300px; /* Limit input width */
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Specific styling for power rating and hours inputs */
+.watts,
+.hours,
+input[type="number"] {
+    width: 150px !important; /* Fixed width for number inputs */
+    min-width: 100px;
+}
+
+/* Dropdown select styling */
+.appliance-select,
+select.appliance-name {
+    width: 300px !important; /* Fixed width for dropdowns */
+    max-width: 100%;
+}
+
+/* Text input styling */
+input.appliance-name {
+    width: 300px !important; /* Fixed width for text inputs */
+    max-width: 100%;
+}
 
 

@@ -297,23 +297,17 @@ window.addAppliance = function() {
     container.appendChild(newEntry);
 }
 
-window.calculateTotalSavings = function() {
-    const appliances = document.getElementsByClassName('appliance-entry');
-    const rate = parseFloat(document.getElementById('rate').value) || 0;
-    const errorMessage = document.getElementById('errorMessage');
-    
-    // Validation
-    if (!rate) {
-        errorMessage.classList.add('show');
-        errorMessage.querySelector('span').textContent = 'Please enter the electricity rate';
-        return;
-    }
+function calculateTotalSavings() {
+    // Get all appliance entries
+    const applianceEntries = document.querySelectorAll('.appliance-entry');
+    const rate = parseFloat(document.getElementById('rate').value) || 25.40; // Default rate
 
+    // Validate inputs
     let hasEmptyFields = false;
-    Array.from(appliances).forEach(appliance => {
-        const name = appliance.querySelector('.appliance-name').value;
-        const watts = appliance.querySelector('.watts').value;
-        const hours = appliance.querySelector('.hours').value;
+    applianceEntries.forEach(entry => {
+        const name = entry.querySelector('.appliance-name').value;
+        const watts = entry.querySelector('.watts').value;
+        const hours = entry.querySelector('.hours').value;
         
         if (!name || !watts || !hours) {
             hasEmptyFields = true;
@@ -321,26 +315,26 @@ window.calculateTotalSavings = function() {
     });
 
     if (hasEmptyFields) {
+        const errorMessage = document.getElementById('errorMessage');
         errorMessage.classList.add('show');
         errorMessage.querySelector('span').textContent = 'Please fill in all appliance details';
         return;
     }
-
-    // Hide error message if validation passes
-    errorMessage.classList.remove('show');
 
     // Calculate totals
     let totalDaily = 0;
     let totalMonthly = 0;
     let totalCost = 0;
     let totalCO2 = 0;
+    let potentialMonthlySavings = 0;
     const insights = [];
 
-    Array.from(appliances).forEach(appliance => {
-        const name = appliance.querySelector('.appliance-name').value;
-        const watts = parseFloat(appliance.querySelector('.watts').value);
-        const hours = parseFloat(appliance.querySelector('.hours').value);
+    applianceEntries.forEach(entry => {
+        const name = entry.querySelector('.appliance-name').value;
+        const watts = parseFloat(entry.querySelector('.watts').value);
+        const hours = parseFloat(entry.querySelector('.hours').value);
         
+        // Daily calculations
         const dailyKWh = (watts * hours) / 1000;
         const monthlyKWh = dailyKWh * 30;
         const monthlyCost = monthlyKWh * rate;
@@ -348,56 +342,61 @@ window.calculateTotalSavings = function() {
         totalDaily += dailyKWh;
         totalMonthly += monthlyKWh;
         totalCost += monthlyCost;
-        totalCO2 += monthlyKWh * 0.5;
+        totalCO2 += monthlyKWh * 0.5; // CO2 emission factor
 
-        // Generate insights
-        if (hours > 8) {
-            insights.push(`<li><i class="fas fa-exclamation-triangle"></i> Your ${name} runs for ${hours} hours. Consider reducing usage time to save energy.</li>`);
+        // Calculate savings opportunities
+        let applianceSavings = 0;
+
+        // 1. Excess hours reduction
+        if (hours > 8 && name.toLowerCase() !== 'refrigerator') {
+            const excessHours = hours - 8;
+            const excessKWh = (watts * excessHours) / 1000;
+            const excessCost = excessKWh * 30 * rate;
+            applianceSavings += excessCost * 0.5;
+            insights.push(`<li><i class="fas fa-clock"></i> Reducing ${name}'s usage by ${excessHours} hours could save KSH ${excessCost.toFixed(2)} monthly</li>`);
         }
-        
-        if (watts > 1000) {
-            insights.push(`<li><i class="fas fa-plug"></i> ${name} is a high-power appliance. Using it during off-peak hours could reduce costs.</li>`);
+
+        // 2. High-power appliance optimization
+        if (watts >= 1000) {
+            const offPeakSavings = monthlyCost * 0.15; // 15% savings for off-peak usage
+            applianceSavings += offPeakSavings;
+            insights.push(`<li><i class="fas fa-bolt"></i> Using ${name} during off-peak hours could save KSH ${offPeakSavings.toFixed(2)} monthly</li>`);
         }
+
+        // 3. Efficiency improvements for specific appliances
+        if (watts > 100 && name.toLowerCase().includes('bulb')) {
+            const ledSavings = monthlyCost * 0.8; // 80% savings with LED
+            applianceSavings += ledSavings;
+            insights.push(`<li><i class="fas fa-lightbulb"></i> Switching ${name} to LED could save KSH ${ledSavings.toFixed(2)} monthly</li>`);
+        }
+
+        potentialMonthlySavings += applianceSavings;
     });
 
-    // Calculate potential savings (20% reduction)
-    const potentialMonthlySavings = totalCost * 0.2;
-
-    // Update the display
+    // Update display
     document.getElementById('dailyUsage').textContent = totalDaily.toFixed(2) + ' kWh';
     document.getElementById('monthlyUsage').textContent = totalMonthly.toFixed(2) + ' kWh';
-    document.getElementById('monthlyCost').textContent = 'Ksh ' + totalCost.toFixed(2);
+    document.getElementById('monthlyCost').textContent = 'KSH ' + totalCost.toFixed(2);
     document.getElementById('co2Impact').textContent = totalCO2.toFixed(2) + ' kg';
-    document.getElementById('potentialSavings').textContent = 
-        `Ksh ${potentialMonthlySavings.toFixed(2)} (20% reduction in usage)`;
-    document.getElementById('insightsList').innerHTML = insights.join('');
+    
+    // Format potential savings
+    const savingsText = potentialMonthlySavings > 0 
+        ? `KSH ${potentialMonthlySavings.toFixed(2)} through recommended actions`
+        : 'Your usage is already optimized';
+    
+    document.getElementById('potentialSavings').textContent = savingsText;
 
+    // Add general insights if needed
+    if (totalMonthly > 300) {
+        insights.push(`<li><i class="fas fa-exclamation-circle"></i> Your monthly consumption is above average. Consider an energy audit.</li>`);
+    }
+
+    // Update insights display
+    document.getElementById('insightsList').innerHTML = insights.join('');
+    
     // Show results
     document.getElementById('result').style.display = 'block';
-
-    // Save results if user is logged in
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-        const userEmail = localStorage.getItem('userEmail');
-        const results = {
-            dailyUsage: totalDaily.toFixed(2),
-            monthlyUsage: totalMonthly.toFixed(2),
-            monthlyCost: totalCost.toFixed(2),
-            co2Impact: totalCO2.toFixed(2),
-            potentialSavings: potentialMonthlySavings.toFixed(2),
-            insights: insights,
-            rate: rate,
-            appliances: Array.from(appliances).map(appliance => ({
-                name: appliance.querySelector('.appliance-name').value,
-                watts: appliance.querySelector('.watts').value,
-                hours: appliance.querySelector('.hours').value
-            }))
-        };
-        
-        // Save calculations
-        localStorage.setItem(`calculationResults_${userEmail}`, JSON.stringify(results));
-        console.log('Calculations saved for:', userEmail);
-    }
-};
+}
 
 window.removeAppliance = function(button) {
     button.parentElement.remove();
@@ -477,6 +476,124 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         loginBtn.style.display = 'inline-block';
         logoutBtn.style.display = 'none';
+    }
+});
+
+// Add these constants at the top of your file
+const APPLIANCE_EFFICIENCY = {
+    'refrigerator': { maxHours: 24, optimalHours: 24, potentialSaving: 0.1 }, // Always on, but can be more efficient
+    'tv': { maxHours: 6, optimalHours: 4, potentialSaving: 0.15 },
+    'ac': { maxHours: 8, optimalHours: 6, potentialSaving: 0.25 }, // High saving potential
+    'washer': { maxHours: 3, optimalHours: 2, potentialSaving: 0.2 },
+    'microwave': { maxHours: 2, optimalHours: 1, potentialSaving: 0.1 },
+    'iron': { maxHours: 3, optimalHours: 2, potentialSaving: 0.15 },
+    'computer': { maxHours: 8, optimalHours: 6, potentialSaving: 0.15 },
+    'fan': { maxHours: 12, optimalHours: 8, potentialSaving: 0.2 },
+    'bulb': { maxHours: 12, optimalHours: 8, potentialSaving: 0.3 }, // LED upgrade potential
+    'water_heater': { maxHours: 4, optimalHours: 2, potentialSaving: 0.3 }
+};
+
+function calculatePotentialSavings(appliance, hours, watts) {
+    const type = appliance.toLowerCase();
+    const efficiency = APPLIANCE_EFFICIENCY[type] || { maxHours: 8, optimalHours: 6, potentialSaving: 0.15 };
+    let savings = 0;
+    let savingTips = [];
+
+    // Calculate based on usage hours
+    if (hours > efficiency.maxHours) {
+        const excessHours = hours - efficiency.maxHours;
+        const dailyExcessKWh = (watts * excessHours) / 1000;
+        savings += dailyExcessKWh * 30 * ELECTRICITY_RATE;
+        savingTips.push(`Reduce usage time by ${excessHours} hours`);
+    }
+
+    // Calculate based on appliance efficiency
+    const baselineUsage = (watts * Math.min(hours, efficiency.maxHours)) / 1000;
+    const efficiencySavings = baselineUsage * efficiency.potentialSaving;
+    savings += efficiencySavings * 30 * ELECTRICITY_RATE;
+
+    // Add specific recommendations
+    if (watts > 1000) {
+        savingTips.push('Consider using during off-peak hours (10 PM - 6 AM)');
+    }
+    
+    if (type === 'bulb' && watts > 60) {
+        savingTips.push('Switch to LED bulbs for up to 90% energy savings');
+    }
+
+    return {
+        amount: savings,
+        tips: savingTips
+    };
+}
+
+function generateDetailedInsights(appliances, totalMonthly, totalCost) {
+    const insights = [];
+    let totalPotentialSavings = 0;
+    const applianceInsights = [];
+
+    // Analyze each appliance
+    appliances.forEach(appliance => {
+        const name = appliance.querySelector('.appliance-name').value;
+        const watts = parseFloat(appliance.querySelector('.watts').value);
+        const hours = parseFloat(appliance.querySelector('.hours').value);
+        
+        const savings = calculatePotentialSavings(name, hours, watts);
+        totalPotentialSavings += savings.amount;
+        
+        if (savings.amount > 0) {
+            applianceInsights.push({
+                name,
+                savings: savings.amount,
+                tips: savings.tips
+            });
+        }
+    });
+
+    // Usage Overview
+    insights.push(`<div class="insight-category">
+        <h4><i class="fas fa-chart-line"></i> Usage Overview</h4>
+        <p>Monthly consumption: ${totalMonthly.toFixed(2)} kWh</p>
+        <p>Current cost: KSH ${totalCost.toFixed(2)}</p>
+        <p>Potential savings: KSH ${totalPotentialSavings.toFixed(2)}</p>
+    </div>`);
+
+    // Appliance-specific insights
+    if (applianceInsights.length > 0) {
+        insights.push(`<div class="insight-category">
+            <h4><i class="fas fa-plug"></i> Appliance-Specific Recommendations</h4>
+            ${applianceInsights.map(app => `
+                <div class="appliance-insight">
+                    <h5>${app.name}</h5>
+                    <p>Potential monthly savings: KSH ${app.savings.toFixed(2)}</p>
+                    <ul>
+                        ${app.tips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('')}
+        </div>`);
+    }
+
+    // Add general efficiency tips
+    insights.push(`<div class="insight-category">
+        <h4><i class="fas fa-lightbulb"></i> General Energy Saving Tips</h4>
+        <ul>
+            <li>Use natural light when possible</li>
+            <li>Maintain your appliances regularly</li>
+            <li>Unplug devices when not in use to avoid standby power consumption</li>
+            <li>Consider upgrading to energy-efficient models</li>
+            ${totalMonthly > 300 ? '<li>Schedule a professional energy audit</li>' : ''}
+        </ul>
+    </div>`);
+
+    return insights;
+}
+
+// Add event listener for the calculate button
+document.addEventListener('DOMContentLoaded', function() {
+    const calculateBtn = document.querySelector('.btn-calculate');
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', calculateTotalSavings);
     }
 });
 

@@ -1783,12 +1783,95 @@ body:not(.home) {
     border-bottom: 8px solid white;
 }
 
-
 .sensor-reading {
-  padding: 20px;
-  border-radius: 10px;
-  background-color: rgba(13, 202, 240, 0.1);
-  margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.sensor-reading h5 {
+    color: #17a2b8;
+    margin-bottom: 15px;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.2);
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.insight-card {
+    background: rgba(23, 162, 184, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.insight-card h5 {
+    color: #17a2b8;
+    margin-bottom: 15px;
+}
+
+.insight-card i {
+    margin-right: 10px;
+}
+
+.insight-list {
+    list-style: none;
+    padding: 0;
+}
+
+.insight-list li {
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recommendations-list {
+    padding: 10px;
+}
+
+.recommendation-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 3px solid #17a2b8;
+    background: rgba(23, 162, 184, 0.05);
+}
+
+.high-usage {
+    color: #dc3545;
+}
+
+.moderate-usage {
+    color: #ffc107;
+}
+
+.efficient-usage {
+    color: #28a745;
 }
 
 

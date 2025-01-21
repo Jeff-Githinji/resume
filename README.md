@@ -1,4 +1,4 @@
-Jeff Githinji - My Portfolio Website
+Jeff Githinji 
 Welcome to the repository for my personal portfolio website. This site showcases my skills, projects, and professional experience as a Web Developer
 🌐 Live Demo
 https://jeff-githinji.github.io/resume/

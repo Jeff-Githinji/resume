@@ -25,114 +25,188 @@
 
   <!-- Main Content -->
   <main id="main-doc">
-    <section id="Intro_To_HTML_and_CSS" class="main-section">
-      <header>Intro To HTML and CSS</header>
-      <p>HTML (Hypertext Markup Language) structures content on the web. It's used to define elements like headings, paragraphs, images, and links.</p>
-      <p>CSS (Cascading Style Sheets) adds styling, such as colors, fonts, and layout, to make the content visually appealing.</p>
-      <code>console.log("Hello, World!");</code>
-    </section>
 
-    <section id="HTML_Basics" class="main-section">
-      <header>HTML Basics</header>
-      <p>HTML Structure: Begins with &lt;!doctype html&gt;, <html> as the root, and includes &lt;head&gt; for metadata and &lt;body&gt; for visible content. Each tag needs to be closed with the content in the middle, example below:</p>
+<section id="Intro_To_HTML_and_CSS" class="main-section">
+  <header>Intro To HTML and CSS</header>
+  <p>HTML (Hypertext Markup Language) structures content on the web. It's used to define elements like headings, paragraphs, images, and links.</p>
+  <p>CSS (Cascading Style Sheets) adds styling, such as colors, fonts, and layout, to make the content visually appealing.</p>
+  <code>
+&lt;h1&gt;Welcome to my website&lt;/h1&gt;
+&lt;p&gt;This is styled with CSS&lt;/p&gt;
+  </code>
+</section>
 
-      <code>
-        <p>&lt;!doctype html&gt;</p>
-        <p>&lt;head&gt;</p>
-        <p> metadata goes here..</p>
-        <p>&lt;/head&gt; -> closing tag</p>
-        <p>&lt;body&gt;</p>
-        <p> visible content goes here..</p>
-        <p>&lt;/body&gt; -> closing tag</p>
-        <p>&lt;/html&gt; -> dont forget to close the very first html tag, this should come last</p>
-      </code>
-    </section>
+<section id="HTML_Basics" class="main-section">
+  <header>HTML Basics</header>
+  <p>HTML Structure: Begins with &lt;!doctype html&gt;, &lt;html&gt; as the root, and includes &lt;head&gt; for metadata and &lt;body&gt; for visible content.</p>
+  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code>
+</section>
 
-    <section id="CSS_Basics" class="main-section">
-      <header>CSS Basics</header>
-      <p>CSS Syntax: Consists of selectors, properties, and values, e.g., p { color: red; }.</p>
-      <h3>CSS Application </h3>
-      <p>Inline: Directly in HTML elements (e.g., <span style="color: red;">This text is red</span>).</p>
-      <p>Internal: In the &lt;style&gt; tag within the &lt;head&gt;</p>
-      <p>External: In a separate .css file, linked with &lt;link&gt; in the &lt;head&gt;.</p>
-      <code>var name = "John";</code>
-    </section>
+<section id="CSS_Basics" class="main-section">
+  <header>CSS Basics</header>
+  <p>CSS Syntax: Consists of selectors, properties, and values.</p>
+  <h3>CSS Application Methods:</h3>
+  <p>1. Inline: Directly in HTML elements</p>
+  <p>2. Internal: In the &lt;style&gt; tag within the &lt;head&gt;</p>
+  <p>3. External: In a separate .css file, linked with &lt;link&gt;</p>
+  <code>
+/* External CSS example */
+h1 {
+  color: blue;
+  font-size: 24px;
+}
 
-    <section id="Text_Styling_with_CSS" class="main-section">
-      <header>Text Styling with CSS</header>
-      <p>Fonts: Control typeface (font-family), size (font-size), and weight (font-weight).</p>
-      <p>Color: Use color for text color, background-color for background.</p>
-      <p>Alignment: Use text-align to align text left, center, or right.</p>
-      <p>Spacing: line-height for vertical spacing, letter-spacing for space between letters.</p>
-      <code>function greet() { console.log("Hello!"); }</code>
-    </section>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  </code>
+</section>
 
-    <section id="Layouts_and_Positioning" class="main-section">
-      <header>Layouts and Positioning</header>
-      <p>Box Model: Elements are treated as boxes with content, padding, border, and margin.</p>
-      <p>Display:
-        <ul>
-          <li>block: Takes full width.</li>
-          <li>inline: Fits content width.</li>
-          <li>inline-block: Combines block and inline.</li>
-        </ul>
-      </p>
-      <p>Positioning:</p>
-      <ul>
-        <li>static: Default positioning.</li>
-        <li>relative: Moves based on its normal position.</li>
-        <li>absolute: Positioned relative to the nearest positioned ancestor.</li>
-        <li>fixed: Stays fixed on the screen.</li>
-      </ul>
-      <p>Float and Clear: Floats elements (e.g., images) to the left or right; clear to prevent overlap.</p>
-      <code>for (let i = 0; i < 5; i++) { console.log(i); }</code>
-    </section>
+<section id="Text_Styling_with_CSS" class="main-section">
+  <header>Text Styling with CSS</header>
+  <p>Common text styling properties in CSS:</p>
+  <code>
+.text-example {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+  </code>
+</section>
 
-    <section id="Responsive_Design" class="main-section">
-      <header>Responsive Design</header>
-      <p>Media Queries: Adjust styles based on screen size, e.g., @media (max-width: 600px).</p>
-      <p>Flexible Units: Use percentages, vw, and vh for responsive sizing.</p>
-      <p>Flexbox: A layout model with flexible, responsive containers:</p>
-      <ul>
-        <li>display: flex; for a container.</li>
-        <li>Align items with justify-content and align-items.</li>
-      </ul>
-      <p>CSS Grid: Another layout system for more complex designs with rows and columns.</p>
-      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
-    </section>
+<section id="Layouts_and_Positioning" class="main-section">
+  <header>Layouts and Positioning</header>
+  <p>Box Model: Elements are treated as boxes with content, padding, border, and margin.</p>
+  <code>
+.box-model-example {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid #333;
+  margin: 10px;
+}
 
-    <section id="Working_with_Colors_and_Backgrounds" class="main-section">
-      <header>Working with Colors and Backgrounds</header>
-      <p>Colors: Defined with Hex (#ff0000), RGB (rgb(255, 0, 0)), or HSL (hsl(0, 100%, 50%)).</p>
-      <p>Backgrounds:</p>
-      <ul>
-        <li>Background-color: Sets background color.</li>
-        <li>Background-image: Adds an image as background.</li>
-        <li>Position and Repeat: Control image alignment and repetition.</li>
-      </ul>
-      <p>Gradients: Linear (linear-gradient()) and radial (radial-gradient()) gradients add smooth color transitions.</p>
-      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
-    </section>
+.positioning-example {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
 
-    <section id="CSS_Transitions_and_Animations" class="main-section">
-      <header>CSS Transitions and Animations</header>
-      <p>Transitions: Smoothly change properties over time using transition: property duration timing-function;.</p>
-      <p>Animations:</p>
-      <ul>
-        <li>Define with @keyframes for complex sequences.</li>
-        <li>Example: @keyframes slide { from { transform: translateX(0); } to { transform: translateX(100px); } }.</li>
-        <li>Apply with animation: slide 2s infinite;.</li>
-      </ul>
-      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
-    </section>
+.float-example {
+  float: left;
+  width: 50%;
+}
+  </code>
+  // ... rest of the content remains the same ...
+</section>
 
-    <section id="Conclusion" class="main-section">
-      <header>Conclusion</header>
-      <p>Recap: HTML structures content, while CSS styles and positions it for visual appeal. Together, they form the foundation of web development.</p>
-      <p>Next Steps: Learn more about JavaScript for interactivity and explore frameworks like Bootstrap for advanced styling.</p>
-      <p>Resources: Consider W3Schools, MDN, or Codecademy for further learning.</p>
-      <code>button.addEventListener("click", function() { alert("Clicked!"); });</code>
-    </section>
+<section id="Responsive_Design" class="main-section">
+  <header>Responsive Design</header>
+  <p>Media Queries and Flexible Layouts:</p>
+  <code>
+/* Media Query Example */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Flexbox Example */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Grid Example */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+  </code>
+</section>
+
+<section id="Working_with_Colors_and_Backgrounds" class="main-section">
+  <header>Working with Colors and Backgrounds</header>
+  <p>Colors and Background Properties:</p>
+  <code>
+.color-examples {
+  color: #ff0000;         /* Hex */
+  color: rgb(255, 0, 0);  /* RGB */
+  color: hsl(0, 100%, 50%); /* HSL */
+}
+
+.background-examples {
+  background-color: #f0f0f0;
+  background-image: url('image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gradient-example {
+  background: linear-gradient(to right, #ff0000, #00ff00);
+}
+  </code>
+</section>
+
+<section id="CSS_Transitions_and_Animations" class="main-section">
+  <header>CSS Transitions and Animations</header>
+  <p>Examples of transitions and animations:</p>
+  <code>
+/* Transition */
+.button {
+  background: blue;
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background: darkblue;
+}
+
+/* Animation */
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+
+.animated-element {
+  animation: slide 2s infinite;
+}
+  </code>
+</section>
+
+<section id="Conclusion" class="main-section">
+  <header>Conclusion</header>
+  <p>Recap: HTML structures content, while CSS styles and positions it for visual appeal. Together, they form the foundation of web development.</p>
+  <p>Next Steps: Learn more about JavaScript for interactivity and explore frameworks like Bootstrap for advanced styling.</p>
+  <p>Resources: Consider W3Schools, MDN, or Codecademy for further learning.</p>
+  <code>
+/* Example of combining HTML and CSS */
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+  </code>
+</section>
 
     <!-- Add more sections as needed -->
   </main>

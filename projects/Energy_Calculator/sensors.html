@@ -1,6 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Energy Monitor</title>
+    <link rel="stylesheet" href="project_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Real-Time Power Monitoring</h2>
+        
+        <div class="readings-grid">
+            <div class="reading-card">
+                <h3>Voltage</h3>
+                <span id="voltage">0.0 V</span>
+            </div>
+            
+            <div class="reading-card">
+                <h3>Current</h3>
+                <span id="current">0.000 A</span>
+            </div>
+            
+            <div class="reading-card">
+                <h3>Power</h3>
+                <span id="power">0.0 W</span>
+            </div>
+            
+            <div class="reading-card">
+                <h3>Total Energy</h3>
+                <span id="energy">0 kWh</span>
+            </div>
+        </div>
+
+        <div id="deviceStatus" class="alert alert-warning">
+            Status: Connecting...
+        </div>
+
+        <div id="lastUpdate" class="timestamp">
+            Last Updated: Never
+        </div>
+    </div>
+
+    <script src="sensorAPI.js"></script>
+</body>
+</html>
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Energy Saver</title>
@@ -199,56 +242,4 @@
 <script src="sensorAPI.js"></script>
 </body>
 </html>
-
-<!-- Add this to your existing CSS or style block -->
-
-/* Container for each appliance entry */
-.appliance-entry {
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 600px; /* Limit maximum width */
-}
-
-/* Input group styling */
-.input-group {
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 600px; /* Match container width */
-}
-
-/* Input fields */
-.input-group input,
-.input-group select {
-    width: 100%;
-    max-width: 300px; /* Limit input width */
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-/* Specific styling for power rating and hours inputs */
-.watts,
-.hours,
-input[type="number"] {
-    width: 150px !important; /* Fixed width for number inputs */
-    min-width: 100px;
-}
-
-/* Dropdown select styling */
-.appliance-select,
-select.appliance-name {
-    width: 300px !important; /* Fixed width for dropdowns */
-    max-width: 100%;
-}
-
-/* Text input styling */
-input.appliance-name {
-    width: 300px !important; /* Fixed width for text inputs */
-    max-width: 100%;
-}
-
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily  <span class="highlight">Quotes</span></h1>
+        <div id="quote-container">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <div id="quote">"The only limit to our realization of tomorrow is our doubts of today."</div>
+            <div id="author">- Franklin D. Roosevelt</div>
+            <select id="category-select">
+                <option value="">Any Category</option>
+                <option value="famous-quotes">Famous Quotes</option>
+                <option value="technology">Technology</option>
+                <option value="wisdom">Wisdom</option>
+                <option value="love">Love</option>
+                <option value="life">Life</option>
+                <option value="friendship">Friendship</option>
+            </select>
+            <button id="generate-button">
+                <i class="fas fa-sync-alt"></i> Generate New Quote
+            </button>
+            <div id="share-buttons">
+                <button onclick="shareQuote('twitter')" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i> Tweet
+                </button>
+                <button onclick="shareQuote('copy')" class="share-btn copy">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -527,7 +527,10 @@ main {
 
 .service-icon-box { margin-bottom: 10px; }
 
-.service-icon-box img { margin: auto; }
+.service-icon-box img { 
+  margin: auto; 
+  color: hsl(45, 100%, 72%);
+}
 
 .service-content-box { text-align: center; }
 

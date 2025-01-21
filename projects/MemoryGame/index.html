@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Memory Game</h1>
+    <div class="game-stats">
+        <div>Moves: <span id="moves">0</span></div>
+        <div>Time: <span id="timer">0:00</span></div>
+        <div>Best: <span id="best-score">-</span></div>
+        <button id="reset-btn">Reset Game</button>
+    </div>
+    <div id="game-board" class="game-board">
+        <!-- Cards will be dynamically added here -->
+    </div>
+
+    <!-- Add How to Play section -->
+    <div class="how-to-play">
+        <h2>How to Play</h2>
+        <div class="instructions">
+            <div class="instruction-step">
+                <span class="step-number">1</span>
+                <p>Click any card to reveal its symbol</p>
+            </div>
+            <div class="instruction-step">
+                <span class="step-number">2</span>
+                <p>Click another card to find its match</p>
+            </div>
+            <div class="instruction-step">
+                <span class="step-number">3</span>
+                <p>Match all pairs with the fewest moves to win!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

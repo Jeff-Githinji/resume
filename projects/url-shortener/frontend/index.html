@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Paste a link and I'll shorten it!</h1>
+        <input type="text" id="urlInput" placeholder="Enter URL here..." />
+        <button id="shortenBtn">Shorten Link</button>
+        <div id="result"></div>
+        <div>
+            <label>
+                <input type="checkbox" id="customUrlCheckbox"> Use a custom URL
+            </label>
+            <input type="text" id="customUrlInput" placeholder="Custom URL (optional)" style="display:none;" />
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- This should be at the end of the body -->
+</body>
+</html>
+

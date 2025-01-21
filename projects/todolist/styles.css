@@ -1,0 +1,392 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.auth-container, .todo-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-container h2, .todo-container header h1 {
+  color: #333;
+}
+
+/* Form Inputs and Buttons */
+input, select, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  border: none;
+  background: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.secondary-button {
+  background: #6c757d;
+}
+
+.secondary-button:hover {
+  background: #5a6268;
+}
+
+.logout-button {
+  background: #dc3545;
+}
+
+.logout-button:hover {
+  background: #c82333;
+}
+
+/* Task Section */
+.input-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+#todo-input {
+  height: 50px;
+  font-size: 16px;
+  padding: 0 15px;
+  width: 96.8%;
+}
+
+#task-category {
+  height: 40px;
+  font-size: 14px;
+}
+
+#add-task {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-container {
+  width: 80%;
+  max-width: 1200px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: nowrap;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.filter-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f0f0f0;
+  color: #333;
+}
+
+.filter-btn.active {
+  background: #007BFF;
+  color: white;
+}
+
+.task-stats {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #666;
+  display: block;
+}
+
+#todo-list li {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+#todo-list li:hover {
+  transform: translateX(5px);
+}
+
+/* Priority colors */
+.priority-High { border-left: 4px solid #dc3545; }
+.priority-Medium { border-left: 4px solid #ffc107; }
+.priority-Low { border-left: 4px solid #28a745; }
+.priority-Mundane { border-left: 4px solid #6c757d; }
+
+/* Scrollbar */
+ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: #007BFF;
+  border-radius: 5px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+#todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Color coding for priority counters */
+.stat-item[data-priority="High"] .stat-label,
+.stat-item[data-priority="High"] #high-counter {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.stat-item[data-priority="Medium"] .stat-label,
+.stat-item[data-priority="Medium"] #medium-counter {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.stat-item[data-priority="Low"] .stat-label,
+.stat-item[data-priority="Low"] #low-counter {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.stat-item[data-priority="Mundane"] .stat-label,
+.stat-item[data-priority="Mundane"] #mundane-counter {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+/* Update auth container styles */
+.auth-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-wrapper {
+    width: 93.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input,
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Update todo container styles */
+.main-title {
+    text-align: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+#add-task {
+    width: 200px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Add styles for user guide */
+.user-guide {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.user-guide h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.user-guide ol {
+    padding-left: 20px;
+    color: #666;
+}
+
+.user-guide li {
+    margin-bottom: 8px;
+}
+
+/* Update completed task styling */
+li.completed .task-info {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Style for completed counter */
+.stat-item[data-priority="Completed"] .stat-label,
+.stat-item[data-priority="Completed"] #completed-counter {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Color coding for filter buttons */
+.filter-btn[data-filter="all"] {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.filter-btn[data-filter="all"]:hover,
+.filter-btn[data-filter="all"].active {
+    background: #333;
+    color: white;
+}
+
+.filter-btn[data-filter="High"] {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.filter-btn[data-filter="High"]:hover,
+.filter-btn[data-filter="High"].active {
+    background: #dc3545;
+    color: white;
+}
+
+.filter-btn[data-filter="Medium"] {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.filter-btn[data-filter="Medium"]:hover,
+.filter-btn[data-filter="Medium"].active {
+    background: #ffc107;
+    color: white;
+}
+
+.filter-btn[data-filter="Low"] {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.filter-btn[data-filter="Low"]:hover,
+.filter-btn[data-filter="Low"].active {
+    background: #28a745;
+    color: white;
+}
+
+.filter-btn[data-filter="Mundane"] {
+    background: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+.filter-btn[data-filter="Mundane"]:hover,
+.filter-btn[data-filter="Mundane"].active {
+    background: #6c757d;
+    color: white;
+}

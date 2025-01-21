@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeff's Task Management App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2 id="auth-title">Login</h2>
+    <div class="auth-form">
+      <div class="input-wrapper">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+      </div>
+      <button id="auth-button">Login</button>
+      <button id="register-button" class="secondary-button">Register</button>
+    </div>
+    <div class="user-guide">
+        <h3>Quick Guide</h3>
+        <ol>
+            <li>Enter credentials and click 'Register'</li>
+            <li>Use the same credentials to Login</li>
+            <li>Your login will work until page refresh</li>
+        </ol>
+    </div>
+  </div>
+
+  <div class="todo-container" style="display: none;">
+    <header>
+      <h1 class="main-title">Jeff's Task Management App</h1>
+      <button id="logout-button" class="logout-button">Logout</button>
+    </header>
+    
+    <div class="input-section">
+        <div class="input-group">
+            <input type="text" id="todo-input" placeholder="Add a new task...">
+            <select id="task-category">
+                <option value="">Select Task Priority</option>
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+                <option value="Mundane">Mundane</option>
+            </select>
+            <button id="add-task"><i class="fas fa-plus"></i> Add Task</button>
+        </div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="High">High</button>
+        <button class="filter-btn" data-filter="Medium">Medium</button>
+        <button class="filter-btn" data-filter="Low">Low</button>
+        <button class="filter-btn" data-filter="Mundane">Mundane</button>
+    </div>
+
+    <div class="task-stats">
+        <div class="stat-item">
+            <span class="stat-label">Total Tasks:</span>
+            <span id="task-counter">0</span>
+        </div>
+        <div class="stat-item" data-priority="High">
+            <span class="stat-label">High Priority:</span>
+            <span id="high-counter">0</span>
+        </div>
+        <div class="stat-item" data-priority="Medium">
+            <span class="stat-label">Medium Priority:</span>
+            <span id="medium-counter">0</span>
+        </div>
+        <div class="stat-item" data-priority="Low">
+            <span class="stat-label">Low Priority:</span>
+            <span id="low-counter">0</span>
+        </div>
+        <div class="stat-item" data-priority="Mundane">
+            <span class="stat-label">Mundane:</span>
+            <span id="mundane-counter">0</span>
+        </div>
+        <div class="stat-item" data-priority="Completed">
+            <span class="stat-label">Completed Tasks:</span>
+            <span id="completed-counter">0</span>
+        </div>
+    </div>
+
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

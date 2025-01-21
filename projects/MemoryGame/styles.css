@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 15px auto 30px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #ff6b6b;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card.flipped {
+    background-color: #ff6b6b;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.card.matched {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.game-stats {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+}
+
+#reset-btn {
+    padding: 5px 15px;
+    background-color: #fff;
+    color: #ff6b6b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#reset-btn:hover {
+    background-color: #ff8e8e;
+    color: #fff;
+}
+
+.how-to-play {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.how-to-play h2 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-number {
+    background-color: #ff6b6b;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.instruction-step p {
+    margin: 0;
+    color: #555;
+    font-size: 1.1rem;
+}

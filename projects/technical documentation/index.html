@@ -1,0 +1,180 @@
+<section id="Intro_To_HTML_and_CSS" class="main-section">
+  <header>Intro To HTML and CSS</header>
+  <p>HTML (Hypertext Markup Language) structures content on the web. It's used to define elements like headings, paragraphs, images, and links.</p>
+  <p>CSS (Cascading Style Sheets) adds styling, such as colors, fonts, and layout, to make the content visually appealing.</p>
+  <code>
+&lt;h1&gt;Welcome to my website&lt;/h1&gt;
+&lt;p&gt;This is styled with CSS&lt;/p&gt;
+  </code>
+</section>
+
+<section id="HTML_Basics" class="main-section">
+  <header>HTML Basics</header>
+  <p>HTML Structure: Begins with &lt;!doctype html&gt;, &lt;html&gt; as the root, and includes &lt;head&gt; for metadata and &lt;body&gt; for visible content.</p>
+  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code>
+</section>
+
+<section id="CSS_Basics" class="main-section">
+  <header>CSS Basics</header>
+  <p>CSS Syntax: Consists of selectors, properties, and values.</p>
+  <h3>CSS Application Methods:</h3>
+  <p>1. Inline: Directly in HTML elements</p>
+  <p>2. Internal: In the &lt;style&gt; tag within the &lt;head&gt;</p>
+  <p>3. External: In a separate .css file, linked with &lt;link&gt;</p>
+  <code>
+/* External CSS example */
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  </code>
+</section>
+
+<section id="Text_Styling_with_CSS" class="main-section">
+  <header>Text Styling with CSS</header>
+  <p>Common text styling properties in CSS:</p>
+  <code>
+.text-example {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+  </code>
+</section>
+
+<section id="Layouts_and_Positioning" class="main-section">
+  <header>Layouts and Positioning</header>
+  <p>Box Model: Elements are treated as boxes with content, padding, border, and margin.</p>
+  <code>
+.box-model-example {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid #333;
+  margin: 10px;
+}
+
+.positioning-example {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+.float-example {
+  float: left;
+  width: 50%;
+}
+  </code>
+</section>
+
+<section id="Responsive_Design" class="main-section">
+  <header>Responsive Design</header>
+  <p>Media Queries and Flexible Layouts:</p>
+  <code>
+/* Media Query Example */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Flexbox Example */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Grid Example */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+  </code>
+</section>
+
+<section id="Working_with_Colors_and_Backgrounds" class="main-section">
+  <header>Working with Colors and Backgrounds</header>
+  <p>Colors and Background Properties:</p>
+  <code>
+.color-examples {
+  color: #ff0000;         /* Hex */
+  color: rgb(255, 0, 0);  /* RGB */
+  color: hsl(0, 100%, 50%); /* HSL */
+}
+
+.background-examples {
+  background-color: #f0f0f0;
+  background-image: url('image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gradient-example {
+  background: linear-gradient(to right, #ff0000, #00ff00);
+}
+  </code>
+</section>
+
+<section id="CSS_Transitions_and_Animations" class="main-section">
+  <header>CSS Transitions and Animations</header>
+  <p>Examples of transitions and animations:</p>
+  <code>
+/* Transition */
+.button {
+  background: blue;
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background: darkblue;
+}
+
+/* Animation */
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+
+.animated-element {
+  animation: slide 2s infinite;
+}
+  </code>
+</section>
+
+<section id="Conclusion" class="main-section">
+  <header>Conclusion</header>
+  <p>Recap: HTML structures content, while CSS styles and positions it for visual appeal. Together, they form the foundation of web development.</p>
+  <p>Next Steps: Learn more about JavaScript for interactivity and explore frameworks like Bootstrap for advanced styling.</p>
+  <p>Resources: Consider W3Schools, MDN, or Codecademy for further learning.</p>
+  <code>
+/* Example of combining HTML and CSS */
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+  </code>
+</section> 

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
-<script src="freshfields.js"></script>
+
 <script src="https://kit.fontawesome.com/c180584d39.js" crossorigin="anonymous"></script>
 
 </head>
@@ -19,7 +19,7 @@
 <div class="container">
     <div class="navbar">
         <div class="logo">
-            <a href="home.html"><img src="images/Designer.jpeg" width="125px"></a> 
+            <a href="home.html"><img src="images/freshfieldslogo.png" width="125px"></a> 
         </div>
         <nav>
             <ul>
@@ -27,7 +27,7 @@
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="account.html">Account</a></li>     
+                     
             </ul>
         </nav>
         <a href="cart.html"><img src="images/cart.png" alt="cart logo" width="30px" height="30px"></a> 
@@ -37,7 +37,7 @@
             <hr>
             <h1>Welcome to FreshFields Farmers Market</h1>
             <p> Revolutionizing the Way You Access and Enjoy Fresh Produce.</p>
-            <a href="" class="btn">Explore Now &#8594; </a>
+            <a href="products.html" class="btn">Explore Now &#8594; </a>
         </div>
         <div class="col-2">
             <img src="images/veggy2.png" alt="vegetables home">
@@ -77,26 +77,34 @@
 
 <div class="small-container">
     <h2 class="title">Featured Products</h2>
-    <div class="row">
+<div class="row">
     <div class="col-4">
         <img src="images/tomatoes.jfif" alt="tomatoes">
         <h4>Tomatoes</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-tomatoes-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Tomatoes', 20, document.getElementById('home-tomatoes-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/avocados.jfif" alt="avocados">
         <h4>Avocados</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-avocados-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Avocados', 20, document.getElementById('home-avocados-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/onions.jfif" alt="onions" height="150px">
         <h4>Onions</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-onions-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Onions', 20, document.getElementById('home-onions-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/bonsai.jpg" alt="bonsai">
         <h4>Bonsai Seedling</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-bonsai-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Bonsai Seedling', 20, document.getElementById('home-bonsai-quantity').value)">Add to Cart</button>
     </div>
 </div>
 <h2 class="title">Latest Products</h2>
@@ -104,44 +112,30 @@
     <div class="col-4">
         <img src="images/tomatoes.jfif" alt="tomatoes">
         <h4>Tomatoes</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-tomatoes-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Tomatoes', 20, document.getElementById('home-tomatoes-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/avocados.jfif" alt="avocados">
         <h4>Avocados</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-avocados-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Avocados', 20, document.getElementById('home-avocados-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/onions.jfif" alt="onions" height="150px">
         <h4>Onions</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-onions-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Onions', 20, document.getElementById('home-onions-quantity').value)">Add to Cart</button>
     </div>
     <div class="col-4">
         <img src="images/bonsai.jpg" alt="bonsai">
         <h4>Bonsai Seedling</h4>
-        <p>$20.00</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-4">
-        <img src="images/tomatoes.jfif" alt="tomatoes">
-        <h4>Tomatoes</h4>
-        <p>$20.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/avocados.jfif" alt="avocados">
-        <h4>Avocados</h4>
-        <p>$20.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/onions.jfif" alt="onions" height="150px">
-        <h4>Onions</h4>
-        <p>$20.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/bonsai.jpg" alt="bonsai">
-        <h4>Bonsai Seedling</h4>
-        <p>$20.00</p>
+        <p>$20.00/kg</p>
+        <input type="number" id="home-bonsai-quantity" value="1" min="1" style="width: 50px;">
+        <button onclick="addToCart('Bonsai Seedling', 20, document.getElementById('home-bonsai-quantity').value)">Add to Cart</button>
     </div>
 </div>
 </div>
@@ -161,7 +155,7 @@
                 <h1>Hass Avocados</h1>
                 <small>"Indulge in Exclusivity: Discover Our Rare Harvest of Exceptional Vegetables!"</small>
                 <br>
-                <a href=""class="btn">Order Now &#8594</a>
+                <a href="products.html"class="btn">Order Now &#8594</a>
             </div>
         </div>
     </div>
@@ -201,15 +195,11 @@
         <div class="row">
             <div class="footer-col-1">
                 <h3>Download Our App</h3>
-                <p>Available for ios and android</p> 
-                <div class="app-logo">
-                    <img src="images/app-store.png" alt="app store">
-                    <img src="images/play-store.png" alt="play store">
-                </div>              
+                <p>Available for ios and android</p>               
             </div>
             <div class="footer-col-2">
-                <img src="images/Designer.jpeg" alt="">
-                <p>Uniting Farms and Tables for a Better Future.</p>
+                
+                <h3>Uniting Farms and Tables for a Better Future.</h3>
             </div>
             <div class="footer-col-3">
                 <h3>Useful Links</h3>
@@ -239,28 +229,8 @@
 
 <div id="greeting-text" class="greeting"></div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to get URL parameters
-        function getUrlParameter(name) {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            return urlParams.get(name);
-        }
 
-        const username = getUrlParameter('username'); // Get the username from the URL parameter
-        const greetingTextElement = document.getElementById('greeting-text');
-
-        if (username) {
-            greetingTextElement.textContent = `Hello, ${username}!`; // Display "Hello" followed by the username
-            greetingTextElement.style.display = 'block'; // Show the greeting element
-        }
-    });
-</script>
-
-
-
-
+<script src="freshfields.js"></script>
 </body>
 </html>
 

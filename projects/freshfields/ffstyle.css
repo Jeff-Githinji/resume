@@ -20,11 +20,11 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Use flexbox for the ul */
+    display: flex; 
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 22px;
 }
 
 nav ul li:last-child {
@@ -326,10 +326,11 @@ h4{
 
 /* Footer styles */
 .footer {
-    background: black;
-    color: yellowgreen;
+    background: #333; /* Darker background for contrast */
+    color: #fff; /* White text for better readability */
     font-size: 14px;
-    padding: 60px 0 20px;
+    padding: 40px 0; /* Adjusted padding */
+    text-align: center; /* Centered text */
 }
 
 .footer .container {
@@ -344,46 +345,50 @@ h4{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if space is limited */
 }
 
-.footer .footer-col-1,
-.footer .footer-col-2,
-.footer .footer-col-3,
-.footer .footer-col-4 {
-    width: 22%; /* Adjust width to fit within available space */
-    margin-bottom: 20px;
-    text-align: center;
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+    flex: 1; /* Equal width for all columns */
+    margin: 10px; /* Margin between columns */
+    min-width: 200px; /* Minimum width for responsiveness */
 }
 
-.footer .footer-col-2 img {
-    width: 180px;
-    margin-bottom: 20px;
+.footer h3 {
+    margin-bottom: 15px; /* Space below headings */
+    color: yellowgreen; /* Highlighted color for headings */
 }
 
 .footer ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-.app-logo{
-    margin-top: 20px;
+.footer ul li {
+    margin: 5px 0; /* Space between list items */
 }
 
-.app-logo img{
-    width: 140px;
+.footer ul li a {
+    color: #fff; /* White text for links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
-.footer hr{
+.footer ul li a:hover {
+    color: yellowgreen; /* Change color on hover */
+}
+
+.footer hr {
     border: none;
     background: turquoise;
     height: 1px;
     margin: 20px 0;
 }
 
-.copyright{
-    text-align: center;
+.copyright {
+    margin-top: 20px; /* Space above copyright text */
 }
 
 /* all products */
@@ -595,6 +600,8 @@ form a{
     background-color: yellowgreen;
 }
 
+
+
 .heading p{
     font-size: 18px;
     color: #666;
@@ -630,6 +637,11 @@ form a{
 
 .about-content p{
     font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
 }
 
 .about-mission {
@@ -648,7 +660,7 @@ form a{
 } 
 
 .about-image{
-    padding-left: 16%;
+    padding-left: 22%;
     
 }
 
@@ -659,7 +671,7 @@ form a{
 .contact-container {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto 50px; /
+    margin: 20px auto 50px; 
     font-family: 'Poppins', sans-serif;
     padding-top: 25px;
     padding-bottom: 40px;
@@ -693,7 +705,7 @@ form a{
 .contact-right {
     flex-basis: 35%;
     padding: 30px;
-    background-color: turquoise;
+    background-color: rgb(209, 243, 58);
     color: black;
     display: flex;
     flex-direction: column;
@@ -752,7 +764,7 @@ label {
 
 /* Adjusted submit button */
 button {
-    background: turquoise;
+    background: yellowgreen;
     width: 100%;
     border: none;
     outline: none;
@@ -765,7 +777,7 @@ button {
 }
 
 button:hover {
-    background: yellowgreen;
+    background: rgb(138, 189, 38);
 }
 
 /* Adjusted table styles */

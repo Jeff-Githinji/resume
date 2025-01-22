@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="'utf-8">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="ffstyle.css">
+    <script src="https://kit.fontawesome.com/c180584d39.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+        }
+        .confirmation {
+            text-align: center;
+        }
+        .tick {
+            font-size: 100px;
+            color: green;
+            animation: tick-animation 1s forwards;
+        }
+        @keyframes tick-animation {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        h1 {
+            margin-top: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <i class="fa-solid fa-check-circle tick"></i>
+        <h1>Your order has been received!</h1>
+    </div>
+</body>
+</html> 

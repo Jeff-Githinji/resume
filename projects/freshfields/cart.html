@@ -14,7 +14,7 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="home.html"><img src="images/Designer.jpeg" width="125px"></a>
+                <a href="home.html"><img src="images/freshfieldslogo.png" width="125px"></a>
             </div>
             <nav>
                 <ul>
@@ -33,84 +33,104 @@
     <!-- cart items details -->
 
     <div class="small-container cart-page">
-        <table>
+        <table id="cart-items">
             <tr>
                 <th>Product</th>
                 <th>Quantity</th>
-                <th>Subtotal</th>    
+                <th>Subtotal</th>
+                <th>Remove</th>
             </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/avocados.jfif" alt="avocados">
-                        <div>
-                            <p>Avocados</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-    
-                <td><input Type="number" value="1"></td>
-                <td>$40.00</td>
-
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/avocados.jfif" alt="avocados">
-                        <div>
-                            <p>Avocados</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-    
-                <td><input Type="number" value="1"></td>
-                <td>$40.00</td>
-
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/avocados.jfif" alt="avocados">
-                        <div>
-                            <p>Avocados</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-    
-                <td><input Type="number" value="1"></td>
-                <td>$40.00</td>
-
-            </tr>
+            
         </table>
-
         <div class="total-price">
             <table>
                 <tr>
                     <td>Subtotal</td>
-                    <td>$200.00</td>
+                    <td id="subtotal">$0.00</td>
                 </tr>
                 <tr>
-                    <td>tax</td>
-                    <td>$35</td>
+                    <td>Tax</td>
+                    <td id="tax">$0.00</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>$235.00</td>
+                    <td id="total">$0.00</td>
                 </tr>
             </table>
         </div>
 
-
+        <!-- New input fields for delivery location and phone number -->
+        <div class="order-details">
+            <label for="delivery-location">Delivery Location:</label>
+            <input type="text" id="delivery-location" placeholder="Enter your delivery location" required>
+            
+            <label for="phone-number">Phone Number:</label>
+            <input type="text" id="phone-number" placeholder="Enter your phone number" required>
+            
+            <button id="place-order-btn">Place Order</button>
+        </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsTable = document.getElementById('cart-items');
+            let subtotal = 0;
+
+            function updateCart() {
+                // Clear the current cart display
+                cartItemsTable.innerHTML = `
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Remove</th>
+                    </tr>
+                `;
+                subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    const itemSubtotal = item.price * item.quantity;
+                    subtotal += itemSubtotal;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${itemSubtotal.toFixed(2)}</td>
+                        <td><i class="fa-solid fa-trash" style="cursor: pointer;" onclick="removeFromCart(${index})"></i></td>
+                    `;
+                    cartItemsTable.appendChild(row);
+                });
+
+                document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+                const tax = subtotal * 0.07; // Assuming 7% tax
+                document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+                document.getElementById('total').textContent = `$${(subtotal + tax).toFixed(2)}`;
+            }
+
+            window.removeFromCart = function(index) {
+                cart.splice(index, 1); // Remove item from cart
+                localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+                updateCart(); // Refresh cart display
+            };
+
+            updateCart(); // Initial cart display
+        });
+
+        document.getElementById('place-order-btn').addEventListener('click', function() {
+            const deliveryLocation = document.getElementById('delivery-location').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+
+            if (!deliveryLocation || !phoneNumber) {
+                alert('Please fill in both fields.');
+                return;
+            }
+
+            // Redirect to a new page 
+            window.open('order-confirmation.html', '_blank');
+        });
+    </script>
 
     <!-- footer -->
 
@@ -126,7 +146,7 @@
                 </div>              
             </div>
             <div class="footer-col-2">
-                <img src="images/Designer.jpeg" alt="">
+                <img src="images/freshfieldslogo.png" alt="">
                 <p>Uniting Farms and Tables for a Better Future.</p>
             </div>
             <div class="footer-col-3">

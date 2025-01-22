@@ -16,7 +16,7 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <a href="home.html"><img src="images/Designer.jpeg" width="125px"></a>
+                <a href="home.html"><img src="images/freshfieldslogo.png" width="125px"></a>
             </div>
             <nav>
                 <ul>
@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <img src="images/Designer.jpeg" width="100%">
+                <img src="images/freshfieldslogo.png" width="100%">
             </div>
             <div class="col-2">
                 <div class="form-container">
@@ -83,7 +83,7 @@
                 </div>              
             </div>
             <div class="footer-col-2">
-                <img src="images/Designer.jpeg" alt="">
+                
                 <p>Uniting Farms and Tables for a Better Future.</p>
             </div>
             <div class="footer-col-3">
@@ -109,75 +109,6 @@
     <hr>
     <p class="copyright">Copyright 2023 - jeffs project</p>
 </div>
-
-<!-- js for toggle form -->
-<script>
-    var LoginForm = document.getElementById("LoginForm");
-    var RegForm = document.getElementById("RegForm");
-    var indicator = document.getElementById("indicator");
-
-    function Register(){
-        RegForm.style.transform = "translateX(0px)";
-        LoginForm.style.transform = "translateX(0px)";
-        indicator.style.transform = "translateX(100px)"
-    }
-    function Login(){
-        RegForm.style.transform = "translateX(300px)";
-        LoginForm.style.transform = "translateX(300px)";
-        indicator.style.transform = "translateX(0px)"
-    }
-</script>
-<script>
-    document.getElementById('LoginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const username = this.querySelector('input[name="username"]').value; // Define the username here
-
-    // Fetch login data and handle login logic
-    fetch('http://localhost:4000/login', { // Update with the correct URL
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username: username,
-            password: this.querySelector('input[name="password"]').value,
-        }),
-    })
-    .then((response) => {
-        if (response.ok) {
-            return response.json(); // Parse the response
-        } else {
-            throw new Error('Login failed');
-        }
-    })
-    .then((data) => {
-        // Display a success message below the login button
-        const successMessageElement = document.getElementById('success-message');
-        successMessageElement.textContent = `Login Successful`; // Display a success message
-        successMessageElement.style.color = 'green'; // Change text color to indicate success
-
-        // Redirect after a brief delay (adjust timing as needed)
-        setTimeout(() => {
-            window.location.href = `home.html?username=${username}`; // Redirect to your destination page upon successful login
-        }, 1000); // Adjust this delay as needed
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        // Handle/display error to the user
-        const errorMessageElement = document.getElementById('success-message');
-        errorMessageElement.textContent = `Login failed`; // Display an error message
-        errorMessageElement.style.color = 'red'; // Change text color to indicate failure
-    });
-});
-
-
-</script>
-
-
-
-
-<script src="client.js"></script>
 
 </body>
 </html>

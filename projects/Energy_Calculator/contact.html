@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-content">
@@ -65,7 +67,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>jggithinji@students.ac.ke</p>
+                            <p>jeffgithinji275@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -80,30 +82,20 @@
             <!-- Contact Form Card -->
             <div class="contact-form-card">
                 <h2><i class="fas fa-paper-plane"></i> Send us a message</h2>
-                <form>
+                <form method="POST" action="https://formspree.io/f/mwpvezaj">
                     <div class="form-row">
                         <div class="input-group">
-                            <label>First Name</label>
-                            <input type="text" required>
+                            <label>Name</label>
+                            <input type="text" name="name" required>
                         </div>
-                        <div class="input-group">
-                            <label>Last Name</label>
-                            <input type="text" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="email" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Phone</label>
-                            <input type="tel" required>
+                            <input type="email" name="_replyto" required>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Message</label>
-                        <textarea required></textarea>
+                        <textarea name="message" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">
                         <i class="fas fa-paper-plane"></i>

@@ -1,59 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Energy Monitor</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Saver</title>
     <link rel="stylesheet" href="project_style.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Real-Time Power Monitoring</h2>
-        
-        <div class="readings-grid">
-            <div class="reading-card">
-                <h3>Voltage</h3>
-                <span id="voltage">0.0 V</span>
-            </div>
-            
-            <div class="reading-card">
-                <h3>Current</h3>
-                <span id="current">0.000 A</span>
-            </div>
-            
-            <div class="reading-card">
-                <h3>Power</h3>
-                <span id="power">0.0 W</span>
-            </div>
-            
-            <div class="reading-card">
-                <h3>Total Energy</h3>
-                <span id="energy">0 kWh</span>
-            </div>
-        </div>
-
-        <div id="deviceStatus" class="alert alert-warning">
-            Status: Connecting...
-        </div>
-
-        <div id="lastUpdate" class="timestamp">
-            Last Updated: Never
-        </div>
-    </div>
-
-    <script src="sensorAPI.js"></script>
-</body>
-</html>
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Energy Saver</title>
-<link rel="stylesheet" href="project_style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="home">
-    
-    
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-content">
@@ -84,8 +39,10 @@
             </div>
         </div>
     </nav>
+    
 <div class="container mt-4">
     <h2 class="text-center mb-4">Sensor Data</h2>
+    <h4>*please connect your smart sensor for this page to be fully functional (check readMe) *</h1>
     
     <!-- Sensor Status Card -->
     <div class="card mb-4 bg-dark text-light border-info">
@@ -95,7 +52,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <p><strong>Connection Status:</strong> <span class="text-success">Connected</span></p>
+                    <p><strong>Connection Status:</strong> <span class="text-success">Not Connected</span></p>
                     <p><strong>Last Updated:</strong> <span id="lastUpdate">--</span></p>
                 </div>
                 <div class="col-md-6">

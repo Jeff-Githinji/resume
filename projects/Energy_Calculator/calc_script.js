@@ -96,13 +96,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Calculate potential savings assuming 8 hours optimal usage
+            // Calculate potential savings based on dynamic optimal hours
             appliances.forEach(function(appliance) {
-                if (appliance.duration > 8) {
-                    const excessUsage = (appliance.duration - 8) * appliance.usage;
+                const efficiency = APPLIANCE_EFFICIENCY[appliance.type];
+                if (appliance.duration > efficiency.optimalHours) {
+                    const excessUsage = (appliance.duration - efficiency.optimalHours) * appliance.usage;
                     potentialSavings += excessUsage;
                 }
             });
+
+            // Validate user input for usage duration
+            const durationInput = input.querySelector('.usageDuration');
+            if (duration > efficiency.maxHours) {
+                alert(`The maximum usage for a ${appliance.type} is ${efficiency.maxHours} hours.`);
+                return; // Prevent further calculations
+            }
 
             // Add a small delay to make the loading state visible
             await new Promise(resolve => setTimeout(resolve, 800));
@@ -481,15 +489,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add these constants at the top of your file
 const APPLIANCE_EFFICIENCY = {
-    'refrigerator': { maxHours: 24, optimalHours: 24, potentialSaving: 0.1 }, // Always on, but can be more efficient
+    'refrigerator': { maxHours: 24, optimalHours: 24, potentialSaving: 0.1 },
     'tv': { maxHours: 6, optimalHours: 4, potentialSaving: 0.15 },
-    'ac': { maxHours: 8, optimalHours: 6, potentialSaving: 0.25 }, // High saving potential
+    'ac': { maxHours: 8, optimalHours: 6, potentialSaving: 0.25 },
     'washer': { maxHours: 3, optimalHours: 2, potentialSaving: 0.2 },
     'microwave': { maxHours: 2, optimalHours: 1, potentialSaving: 0.1 },
     'iron': { maxHours: 3, optimalHours: 2, potentialSaving: 0.15 },
     'computer': { maxHours: 8, optimalHours: 6, potentialSaving: 0.15 },
     'fan': { maxHours: 12, optimalHours: 8, potentialSaving: 0.2 },
-    'bulb': { maxHours: 12, optimalHours: 8, potentialSaving: 0.3 }, // LED upgrade potential
+    'bulb': { maxHours: 12, optimalHours: 8, potentialSaving: 0.3 },
     'water_heater': { maxHours: 4, optimalHours: 2, potentialSaving: 0.3 }
 };
 

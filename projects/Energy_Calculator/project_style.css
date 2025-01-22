@@ -1874,6 +1874,37 @@ body:not(.home) {
     color: #28a745;
 }
 
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #75c475; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.table tr:hover {
+    background-color: #e0e0e0; /* Highlight row on hover */
+}
+
+.table td {
+    color: #333; /* Text color for table cells */
+}
+
 
 
 

@@ -41,6 +41,10 @@ To enhance the accuracy of your energy calculations, you can integrate energy se
 4. Click the "Calculate Total Savings" button to view your energy usage summary and potential savings.
 5. Review the personalized insights and recommendations provided by the application.
 
+##Login credentials to check functionality
+1. email: 'demo@example.com', password: 'password123' 
+2. email: 'test@example.com', password: 'test123' 
+
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 

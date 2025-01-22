@@ -48,9 +48,6 @@ To enhance the accuracy of your energy calculations, you can integrate energy se
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 - Thanks to the contributors and the open-source community for their support and resources.
 - Special thanks to [Font Awesome](https://fontawesome.com/) for providing the icons used in this project.

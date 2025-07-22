@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogHub - Your Blogging Platform</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation Header -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>BlogHub</h1>
+                </div>
+                <div class="nav-menu">
+                    <button class="nav-btn active" data-view="dashboard">
+                        <i class="fas fa-home"></i> Dashboard
+                    </button>
+                    <button class="nav-btn" data-view="write">
+                        <i class="fas fa-edit"></i> Write
+                    </button>
+                    <button class="nav-btn" data-view="profile">
+                        <i class="fas fa-user"></i> Profile
+                    </button>
+                </div>
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search articles..." id="searchInput">
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Post
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view active">
+                <div class="container">
+                    <!-- Stats Section -->
+                    <section class="stats-section">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-articles">0</h3>
+                                    <p>Total Articles</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-writers">342</h3>
+                                    <p>Active Writers</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-likes">0</h3>
+                                    <p>Total Likes</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trending-up"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>89</h3>
+                                    <p>Trending Today</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Category Filter -->
+                    <section class="filter-section">
+                        <div class="category-filters">
+                            <button class="filter-btn active" data-category="all">All Categories</button>
+                            <button class="filter-btn" data-category="Design">Design</button>
+                            <button class="filter-btn" data-category="Community">Community</button>
+                            <button class="filter-btn" data-category="Productivity">Productivity</button>
+                            <button class="filter-btn" data-category="Technology">Technology</button>
+                        </div>
+                    </section>
+
+                    <!-- Blog Posts Section -->
+                    <section class="posts-section">
+                        <div id="posts-container" class="posts-grid">
+                            <!-- Posts will be dynamically loaded here -->
+                        </div>
+                        <div id="loading" class="loading hidden">
+                            <i class="fas fa-spinner fa-spin"></i> Loading posts...
+                        </div>
+                        <div id="no-posts" class="no-posts hidden">
+                            <i class="fas fa-file-alt"></i>
+                            <p>No posts found matching your criteria.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Write View (placeholder for now) -->
+            <div id="write-view" class="view">
+                <div class="container">
+                    <h2>Write a New Post</h2>
+                    <p>Writing interface coming soon...</p>
+                </div>
+            </div>
+
+            <!-- Profile View (placeholder for now) -->
+            <div id="profile-view" class="view">
+                <div class="container">
+                    <h2>Your Profile</h2>
+                    <p>Profile management coming soon...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="src/js/main.js"></script>
+</body>
+</html>

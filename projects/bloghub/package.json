@@ -1,0 +1,18 @@
+{
+  "name": "bloghub",
+  "version": "1.0.0",
+  "description": "A modern blogging platform",
+  "main": "index.html",
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
+  },
+  "scripts": {
+    "start": "live-server --port=3000 --open=/",
+    "dev": "live-server --port=3000 --open=/ --watch=.",
+    "format": "prettier --write .",
+    "test": "echo \"No tests yet\" && exit 0"
+  }
+}
+

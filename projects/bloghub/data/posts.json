@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "title": "The Art of Minimalist Web Design",
+        "excerpt": "Exploring how less can be more in creating beautiful, functional websites that users love. Learn the principles behind clean, effective design.",
+        "content": "Minimalism in web design isn't just about using white space—it's about creating intentional, user-focused experiences...",
+        "author": "Sarah Chen",
+        "category": "Design",
+        "tags": ["design", "minimalism", "ux", "web"],
+        "createdAt": "2024-07-22T10:30:00Z",
+        "updatedAt": "2024-07-22T10:30:00Z",
+        "likes": 124,
+        "comments": 18,
+        "readTime": 5,
+        "featured": true,
+        "published": true,
+        "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=200&fit=crop"
+    },
+    {
+        "id": 2,
+        "title": "Building Sustainable Tech Communities",
+        "excerpt": "How to create inclusive spaces where developers can grow, learn, and support each other in their coding journey.",
+        "content": "Creating a thriving tech community requires more than just technical knowledge...",
+        "author": "Marcus Johnson",
+        "category": "Community",
+        "tags": ["community", "tech", "collaboration", "growth"],
+        "createdAt": "2024-07-22T08:15:00Z",
+        "updatedAt": "2024-07-22T08:15:00Z",
+        "likes": 89,
+        "comments": 32,
+        "readTime": 8,
+        "featured": false,
+        "published": true,
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop"
+    },
+    {
+        "id": 3,
+        "title": "The Future of Remote Work",
+        "excerpt": "Examining how distributed teams are reshaping the workplace and what it means for productivity and work-life balance.",
+        "content": "Remote work has fundamentally changed how we think about productivity and collaboration...",
+        "author": "Alex Rivera",
+        "category": "Productivity",
+        "tags": ["remote work", "productivity", "future", "workplace"],
+        "createdAt": "2024-07-21T16:45:00Z",
+        "updatedAt": "2024-07-21T16:45:00Z",
+        "likes": 201,
+        "comments": 45,
+        "readTime": 6,
+        "featured": true,
+        "published": true,
+        "image": "https://images.unsplash.com/photo-1486312338219-ce68e2c6f44d?w=400&h=200&fit=crop"
+    }
+]

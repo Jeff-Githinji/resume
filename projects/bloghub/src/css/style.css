@@ -1,3 +1,424 @@
+/* --- Writing Interface Form --- */
+.write-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+        }
+
+        .write-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4f8cff, transparent);
+            opacity: 0.6;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+        }
+
+        .form-input {
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    border: 1.5px solid #e0e0e0;
+    background: #fff;
+    color: #222;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+        }
+
+        .form-input:focus {
+    outline: none;
+    border-color: #4f8cff;
+    background: #f5f8ff;
+    box-shadow: 0 0 0 4px rgba(79,140,255,0.08);
+    transform: translateY(-1px);
+        }
+
+        .form-input::placeholder {
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .form-input:focus::placeholder {
+            color: #888;
+        }
+
+        /* Enhanced Select Styling */
+        select.form-input {
+    color: #222;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23888' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 3rem;
+    appearance: none;
+        }
+
+        select.form-input:focus {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%234f8cff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        }
+
+        select.form-input option {
+    background: #fff;
+    color: #222;
+    padding: 0.5rem;
+        }
+
+        /* Enhanced File Input */
+        .file-input-wrapper {
+            position: relative;
+            display: block;
+        }
+
+        .file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    border: 2px dashed #e0e0e0;
+    background: #f7f7f7;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+        }
+
+        .file-input-label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(79, 140, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .file-input-label:hover {
+    border-color: #4f8cff;
+    background: #f0f6ff;
+    color: #4f8cff;
+    transform: translateY(-1px);
+        }
+
+        .file-input-label:hover::before {
+            left: 100%;
+        }
+
+        .file-input-label i {
+            font-size: 1.25rem;
+        }
+
+        input[type="file"].form-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Quill Editor Enhancements */
+        .quill-wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1.5px solid #e0e0e0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .quill-wrapper:focus-within {
+    border-color: #4f8cff;
+    box-shadow: 0 0 0 4px rgba(79,140,255,0.08);
+    transform: translateY(-1px);
+        }
+
+        .ql-toolbar.ql-snow {
+    border-radius: 0;
+    background: #f7f7f7;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem;
+        }
+
+        .ql-toolbar.ql-snow .ql-stroke {
+            stroke: #888;
+        }
+
+        .ql-toolbar.ql-snow .ql-fill {
+            fill: #888;
+        }
+
+        .ql-toolbar.ql-snow .ql-picker-label {
+            color: #888;
+        }
+
+        .ql-toolbar.ql-snow button:hover .ql-stroke,
+        .ql-toolbar.ql-snow .ql-active .ql-stroke {
+            stroke: #4f8cff;
+        }
+
+        .ql-toolbar.ql-snow button:hover .ql-fill,
+        .ql-toolbar.ql-snow .ql-active .ql-fill {
+            fill: #4f8cff;
+        }
+
+        .ql-container.ql-snow {
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    border: none;
+    min-height: 250px;
+        }
+
+        .ql-editor {
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1.5rem;
+        }
+
+        .ql-editor::before {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Enhanced Submit Button */
+        .btn-primary {
+            padding: 1.25rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #4f8cff 0%, #667eea 100%);
+            border: none;
+            border-radius: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a94ff 0%, #7289f0 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 25px rgba(79, 140, 255, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        /* Character Counter */
+        .char-counter {
+            font-size: 0.75rem;
+            color: #666;
+            text-align: right;
+            margin-top: 0.25rem;
+        }
+
+        .char-counter.warning {
+            color: #ff6b6b;
+        }
+
+        /* Success message */
+        .success-message {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        /* Animation for form load */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .write-form {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .form-group {
+            animation: slideIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .form-group:nth-child(5) { animation-delay: 0.5s; }
+        .form-group:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .write-form {
+                margin: 1rem;
+                padding: 1.5rem;
+                border-radius: 1.5rem;
+                max-width: none;
+            }
+            
+            .form-input {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .file-input-label {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .btn-primary {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+/* --- Blog Post Card Grid --- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- Post Card --- */
+.post-card {
+    background: #222;
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 350px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    transition: transform 0.2s;
+}
+.post-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* --- Thumbnail --- */
+.post-thumb {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* --- Post Info --- */
+.post-info {
+    padding: 1rem 1.2rem 0.5rem 1.2rem;
+    text-align: center;
+}
+.post-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.2rem 0;
+    color: #fff;
+}
+.post-subtitle {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Post Meta --- */
+.post-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
  /* Reset and base styles */
 * {
     margin: 0;
@@ -137,6 +558,11 @@ body {
 }
 
 .container {
+    /* Make write view container wider for writing interface */
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
